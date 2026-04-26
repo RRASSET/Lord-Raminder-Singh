@@ -8,10 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -19,6 +26,7 @@
       color: #111;
       background: #fff;
       overflow-x: hidden;
+      line-height: 1.4;
     }
 
     img {
@@ -42,11 +50,13 @@
       gap: 8px;
       font-size: 11px;
       color: #4c5a63;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .wix-strip strong {
       font-size: 16px;
       color: #111;
+      font-weight: 900;
     }
 
     .wix-strip a {
@@ -69,16 +79,17 @@
 
     .socials a {
       color: #fff;
-      margin-left: 18px;
+      margin-left: 24px;
       font-size: 17px;
     }
 
     .navbar {
+      width: 100%;
       height: 112px;
+      background: #fff;
       display: flex;
       align-items: center;
       padding: 0 105px;
-      background: #fff;
       border-bottom: 1px solid #111;
     }
 
@@ -92,6 +103,7 @@
 
     .logo {
       width: 82px;
+      height: auto;
     }
 
     .brand span {
@@ -99,38 +111,41 @@
       color: #6d9ca1;
       font-size: 9px;
       font-weight: 700;
+      letter-spacing: 0.2px;
       white-space: nowrap;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .menu {
       display: flex;
       gap: 38px;
-      margin-left: auto;
       align-items: center;
+      justify-content: flex-end;
+      margin-left: auto;
     }
 
     .menu a {
+      color: #000;
       font-size: 10px;
       font-weight: 900;
       text-transform: uppercase;
-    }
-
-    .nav-icons {
-      display: flex;
-      gap: 24px;
-      margin-left: 35px;
-      font-size: 16px;
-      color: #06172a;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .hero {
+      width: 100%;
       height: 525px;
-      background: url("recognitionbanner.png") center center / cover no-repeat;
+      background-image: url("recognitionbanner.png");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #333;
     }
 
     .intro {
       text-align: center;
       padding: 72px 20px 35px;
+      background: #fff;
     }
 
     .eyebrow {
@@ -138,6 +153,7 @@
       font-weight: 900;
       text-transform: uppercase;
       margin-bottom: 10px;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .intro h1 {
@@ -146,6 +162,7 @@
       line-height: 1.05;
       font-weight: 900;
       text-transform: uppercase;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .intro p {
@@ -154,6 +171,7 @@
       font-size: 13px;
       line-height: 1.35;
       font-weight: 500;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .awards-grid {
@@ -164,21 +182,27 @@
       grid-template-columns: repeat(3, 1fr);
       column-gap: 115px;
       row-gap: 80px;
+      background: #fff;
     }
 
     .award-card {
       text-align: left;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .award-icon {
-      width: 82px;
-      height: 95px;
+      width: 90px;
+      height: 105px;
       margin: 0 auto 26px;
-      color: #77839b;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-size: 78px;
+      justify-content: center;
+    }
+
+    .award-icon img {
+      width: 80px;
+      height: auto;
+      object-fit: contain;
     }
 
     .award-card h3 {
@@ -186,6 +210,7 @@
       line-height: 1.25;
       font-weight: 900;
       margin: 0 0 5px;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .award-card p {
@@ -193,6 +218,7 @@
       line-height: 1.35;
       font-weight: 500;
       margin: 0;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .quote-section {
@@ -215,6 +241,7 @@
       font-size: 44px;
       font-weight: 200;
       opacity: .9;
+      color: #fff;
     }
 
     .quote-section::before {
@@ -237,12 +264,20 @@
       font-weight: 400;
       margin: 0 0 45px;
       letter-spacing: -1px;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .quote-author {
       font-size: 28px;
       font-weight: 900;
       text-transform: uppercase;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .quote-dot {
+      font-size: 18px;
+      margin-top: 45px;
+      line-height: 1;
     }
 
     .gallery {
@@ -277,6 +312,7 @@
       font-weight: 900;
       text-transform: uppercase;
       margin: 0 0 18px;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .footer-address {
@@ -286,6 +322,7 @@
       line-height: 1.4;
       margin: 0 0 18px;
       font-style: normal;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     .footer-socials {
@@ -305,6 +342,7 @@
       font-size: 10px;
       font-weight: 500;
       text-transform: uppercase;
+      font-family: 'Nunito Sans', sans-serif;
     }
 
     @media screen and (max-width: 900px) {
@@ -327,10 +365,6 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 18px;
-      }
-
-      .nav-icons {
-        display: none;
       }
 
       .hero {
@@ -362,6 +396,11 @@
 
       .top-bar {
         padding: 0 20px;
+      }
+
+      .socials a {
+        margin-left: 18px;
+        font-size: 15px;
       }
 
       .logo {
@@ -420,9 +459,8 @@
   <header>
     <div class="top-bar">
       <div class="socials">
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
     </div>
 
@@ -440,20 +478,15 @@
         <a href="books.html">Books</a>
         <a href="recognition.html">Recognition</a>
       </div>
-
-      <div class="nav-icons">
-        <a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a href="#" aria-label="Account"><i class="fa-regular fa-user"></i></a>
-      </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero"></section>
+    <section class="hero" aria-label="Recognition banner"></section>
 
     <section class="intro">
       <div class="eyebrow">Philanthropy</div>
-      <h1>Champion Of Political &<br>Social Change</h1>
+      <h1>Champion Of Political &amp;<br>Social Change</h1>
       <p>
         For Lord Rami Ranger, success is measured not only by personal achievements but by the positive impact one can make on society. Guided by his mother’s principles of empathy and selflessness, Lord Rami has dedicated his time, resources, and influence to uplifting communities and supporting causes that foster education, healthcare, and social unity. His philanthropic efforts reflect a deep commitment to giving back, improving lives, and building a more inclusive and compassionate world.
       </p>
@@ -461,57 +494,57 @@
 
     <section class="awards-grid">
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Queen’s Awards for Enterprise (2009 - 2013)</h3>
         <p>Sun Mark Ltd was honoured with the Queen’s Award for Enterprise in International Trade for five consecutive years, marking Lord Rami’s company as a leader in British exports.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Doctor of Letters (D.Litt) from the University of West London (2016)</h3>
-        <p>This honorary degree celebrates Lord Rami’s significant contributions to business and his support for educational initiatives.</p>
+        <p>This honorary degree celebrates Lord Rami’s significant contributions to business and his support for educational initiatives. His donation of £200,000 to enhance student facilities at the university reflects his belief in the power of education to shape future leaders.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Doctorate from Preston University (USA) (2016)</h3>
         <p>Awarded in recognition of Lord Rami’s exceptional contributions to international trade and his ongoing work in promoting global commerce and community service.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Freeman of the City of London</h3>
         <p>In recognition of his charitable work and support for British trade and industry, Lord Rami was granted the prestigious title of Freeman of the City of London.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Man of the Year — GG2 Leadership Awards (2014)</h3>
-        <p>At the GG2 Leadership Awards, Lord Rami was honoured as Man of the Year by the Prime Minister, Rt Hon. David Cameron MP.</p>
+        <p>At the GG2 Leadership Awards, Lord Rami was honoured as Man of the Year by the Prime Minister, Rt Hon. David Cameron MP, for his leadership, community work, and contributions to strengthening ties between British and Asian communities.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>European Business Awards: Export Champion of the Year (2012/2013)</h3>
-        <p>Lord Rami was named Export Champion of the Year at the prestigious European Business Awards, recognising his outstanding achievements in international trade.</p>
+        <p>Lord Rami was named Export Champion of the Year at the prestigious European Business Awards, recognising his outstanding achievements in international trade and his leadership in expanding British exports to over 130 countries through Sun Mark Ltd.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Hot 100 Investec Award (2013)</h3>
-        <p>Lord Rami was named a recipient of the Hot 100 Investec Award, acknowledging his outstanding entrepreneurial success and business leadership.</p>
+        <p>Lord Rami was named a recipient of the Hot 100 Investec Award, acknowledging his outstanding entrepreneurial success and business leadership across various sectors.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Patron of Combat Stress</h3>
         <p>Recognized for his generous donation and support of veterans’ mental health services through Combat Stress, a leading UK charity.</p>
       </div>
 
       <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon"><img src="award-icon.png" alt="Award"></div>
         <h3>Support for Gandhi Memorial</h3>
-        <p>Lord Rami contributed £100,000 to the Gandhi Memorial Foundation, helping to erect the Mahatma Gandhi statue in London’s Parliament Square.</p>
+        <p>Lord Rami contributed £100,000 to the Gandhi Memorial Foundation, helping to erect the Mahatma Gandhi statue in London’s Parliament Square. His efforts were celebrated for honouring Gandhi’s legacy of peace and non-violence.</p>
       </div>
     </section>
 
@@ -519,6 +552,7 @@
       <div class="quote-inner">
         <p class="quote-text">“Winning The Queen’s Award Is The Pinnacle Of Business Success In Britain. To Have Done It Five Times In A Row Is Something I Could Only Have Dreamed Of.”</p>
         <div class="quote-author">Lord Rami Ranger FRSA</div>
+        <div class="quote-dot">•</div>
       </div>
     </section>
 
@@ -540,9 +574,8 @@
         </address>
 
         <div class="footer-socials">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
     </section>
