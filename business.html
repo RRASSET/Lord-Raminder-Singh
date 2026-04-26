@@ -8,19 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: 'Nunito Sans', sans-serif;
       color: #111;
-      background: white;
+      background: #fff;
       overflow-x: hidden;
       line-height: 1.4;
     }
@@ -46,7 +44,7 @@
     }
 
     .socials a {
-      color: white;
+      color: #fff;
       margin-left: 24px;
       font-size: 17px;
     }
@@ -54,9 +52,8 @@
     .navbar {
       width: 100%;
       height: 142px;
-      background: white;
+      background: #fff;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       padding: 0 105px;
       border-bottom: 2px solid #111;
@@ -67,6 +64,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .logo {
@@ -118,6 +116,7 @@
       gap: 115px;
       align-items: center;
       min-height: 515px;
+      background: #fff;
     }
 
     .intro-image,
@@ -128,9 +127,11 @@
     }
 
     .intro-image img,
-    .sea-image img,
-    .legacy-image img {
+    .legacy-image img,
+    .sea-image img {
       height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
 
     .content-block {
@@ -151,15 +152,16 @@
       line-height: 1.05;
       font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin: 0 0 24px;
       letter-spacing: .2px;
     }
 
-    .content-block p {
+    .content-block p,
+    .legacy-copy p {
       font-size: 14px;
       font-weight: 500;
       line-height: 1.33;
-      margin-bottom: 26px;
+      margin: 0 0 26px;
     }
 
     .btn-outline {
@@ -174,6 +176,7 @@
       color: #111;
       font-size: 11px;
       font-weight: 500;
+      transition: all .25s ease;
     }
 
     .btn-outline:hover {
@@ -183,7 +186,7 @@
 
     .legacy-section {
       background: #6d9ca1;
-      color: white;
+      color: #fff;
       min-height: 505px;
       display: flex;
       align-items: center;
@@ -204,17 +207,11 @@
       max-width: 410px;
     }
 
-    .legacy-copy p {
-      font-size: 14px;
-      line-height: 1.34;
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-
     .legacy-image {
       width: 505px;
       height: 428px;
       background: #ddd;
+      overflow: hidden;
     }
 
     .sea-section {
@@ -228,14 +225,54 @@
       height: 405px;
     }
 
-    .full-banner {
+    .business-banner-two {
       width: 100%;
-      height: 675px;
+      height: 575px;
       background-image: url("businessbannerone.png");
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      background-color: #333;
+      background-color: #000;
+    }
+
+    .philanthropy {
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 20px;
+      background: #fff;
+    }
+
+    .philanthropy-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .philanthropy p {
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 500;
+      margin: 0 0 26px;
+    }
+
+    .learn-mini {
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 900;
+      text-transform: uppercase;
+      display: block;
+      margin: 0 auto 9px;
+      max-width: 310px;
+    }
+
+    .learn-link {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: underline;
+      text-transform: uppercase;
     }
 
     .footer-main {
@@ -257,7 +294,7 @@
       font-size: 14px;
       font-weight: 800;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin: 0 0 18px;
     }
 
     .footer-address {
@@ -265,7 +302,7 @@
       font-weight: 500;
       text-transform: uppercase;
       line-height: 1.4;
-      margin-bottom: 18px;
+      margin: 0 0 18px;
       font-style: normal;
     }
 
@@ -278,7 +315,7 @@
 
     .footer-bottom {
       background: #6d9ca1;
-      color: white;
+      color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -310,8 +347,7 @@
         margin-left: 0;
       }
 
-      .hero,
-      .full-banner {
+      .hero {
         height: 520px;
       }
 
@@ -352,6 +388,10 @@
         padding: 0;
       }
 
+      .business-banner-two {
+        height: 420px;
+      }
+
       .footer-bottom {
         flex-direction: column;
         gap: 8px;
@@ -382,20 +422,26 @@
         font-size: 10px;
       }
 
-      .hero,
-      .full-banner {
+      .hero {
         height: 330px;
+      }
+
+      .business-banner-two {
+        height: 290px;
       }
 
       .section-title {
         font-size: 23px;
+      }
+
+      .philanthropy {
+        padding: 55px 20px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="top-bar">
       <div class="socials">
@@ -422,7 +468,7 @@
   </header>
 
   <main>
-    <section class="hero"></section>
+    <section class="hero" aria-label="Business Leadership"></section>
 
     <section class="intro-section">
       <div class="intro-image">
@@ -475,7 +521,19 @@
       </div>
     </section>
 
-    <section class="full-banner"></section>
+    <section class="business-banner-two" aria-label="Business banner"></section>
+
+    <section class="philanthropy">
+      <div class="philanthropy-inner">
+        <div class="eyebrow">Philanthropy</div>
+        <h2 class="section-title">Innovating For<br>The Future</h2>
+        <p>
+          Under Lord Rami’s leadership, both Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd continue to innovate and grow, adapting to the demands of an ever-changing global marketplace. By leveraging cutting-edge technology, fostering strategic partnerships, and maintaining a relentless focus on quality, Lord Rami ensures that his companies remain at the forefront of international trade.
+        </p>
+        <span class="learn-mini">Learn more about Lord Rami’s global impact and philanthropic initiatives</span>
+        <a href="#" class="learn-link">Learn More</a>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -502,6 +560,5 @@
       <a href="#">Privacy Policy &amp; Terms</a>
     </section>
   </footer>
-
 </body>
 </html>
