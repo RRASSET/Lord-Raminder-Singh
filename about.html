@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Lord Rami Ranger FRSA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      color: #111;
+      background: white;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      height: 34px;
+      background: #6d9ca1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 105px;
+    }
+
+    .socials a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 17px;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 85px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 105px;
+    }
+
+    .brand {
+      width: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 48px;
+      height: auto;
+      display: block;
+    }
+
+    .brand span {
+      margin-top: 3px;
+      color: #6d9ca1;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #000;
+      text-decoration: none;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* BANNER FIXED */
+    .about-hero {
+      width: 100%;
+      height: 705px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .about-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .about-two-col {
+      display: grid;
+      grid-template-columns: 52% 36%;
+      gap: 75px;
+      align-items: center;
+      padding: 58px 42px;
+      background: white;
+    }
+
+    .about-two-col img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-copy {
+      max-width: 440px;
+    }
+
+    .about-copy h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      text-transform: uppercase;
+    }
+
+    .about-copy h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+
+    .about-copy p {
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 0 0 16px;
+    }
+
+    .about-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 9px 22px;
+      border: 1px solid #111;
+      color: #111;
+      background: white;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .about-btn:hover {
+      background: #111;
+      color: white;
+    }
+
+    .about-quote {
+      background: #6d9ca1;
+      color: white;
+      text-align: center;
+      padding: 75px 60px;
+      border-top: 3px solid #111;
+    }
+
+    .about-quote p {
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.35;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .about-quote h3 {
+      margin-top: 28px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .legacy-section {
+      display: grid;
+      grid-template-columns: 42% 50%;
+      gap: 75px;
+      align-items: center;
+      padding: 70px 42px;
+      background: white;
+    }
+
+    .legacy-section img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .legacy-section .about-copy {
+      padding-left: 30px;
+    }
+
+    .about-blue-gallery {
+      background: #6d9ca1;
+      color: white;
+      text-align: center;
+      padding: 58px 40px 70px;
+    }
+
+    .about-blue-gallery > p {
+      max-width: 1120px;
+      margin: 0 auto 48px;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .about-gallery img {
+      width: 100%;
+      height: 405px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .business-section {
+      display: grid;
+      grid-template-columns: 52% 36%;
+      gap: 75px;
+      align-items: center;
+      padding: 70px 42px 78px;
+      background: white;
+    }
+
+    .business-section img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      background: #f7f7f7;
+      text-align: center;
+      padding: 70px 20px 55px;
+    }
+
+    .footer-logo {
+      width: 95px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    footer h4 {
+      margin: 0 0 18px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    footer p {
+      font-size: 11px;
+      line-height: 1.4;
+      margin: 0 0 18px;
+    }
+
+    .footer-socials a {
+      color: #111;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 17px;
+    }
+
+    .bottom-bar {
+      background: #6d9ca1;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 80px;
+    }
+
+    .bottom-bar p {
+      font-size: 10px;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 900px) {
+      .top-bar,
+      .navbar {
+        padding: 0 25px;
+      }
+
+      .navbar {
+        height: auto;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .about-hero {
+        height: 520px;
+      }
+
+      .about-hero img {
+        object-position: top center;
+      }
+
+      .about-two-col,
+      .legacy-section,
+      .business-section {
+        grid-template-columns: 1fr;
+        padding: 45px 25px;
+        gap: 35px;
+      }
+
+      .about-two-col img,
+      .legacy-section img,
+      .business-section img {
+        height: auto;
+      }
+
+      .about-copy {
+        max-width: 100%;
+      }
+
+      .legacy-section .about-copy {
+        padding-left: 0;
+      }
+
+      .about-blue-gallery {
+        padding: 45px 25px;
+      }
+
+      .about-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .about-gallery img {
+        height: auto;
+      }
+
+      .bottom-bar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="socials">
+      <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" class="logo" alt="Lord Rami Ranger FRSA Logo">
+      <span>LORD RAMI RANGER FRSA</span>
+    </a>
+
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#philanthropy">Philanthropy</a>
+      <a href="index.html#business">Business</a>
+      <a href="index.html#books">Books</a>
+      <a href="index.html#recognition">Recognition</a>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <img src="images/aboutbanner.png" alt="About Banner">
+  </section>
+
+  <section class="about-two-col">
+    <div>
+      <img src="images/aboutone.png" alt="Early Life">
+    </div>
+
+    <div class="about-copy">
+      <h2>EARLY LIFE</h2>
+      <h4>INSPIRATIONAL BEGINNINGS</h4>
+      <p>
+        Rami Ranger’s journey began in Patiala, India, where he was born two months after the assassination of his father,
+        Shaheed Nanak Singh, who gave his life during the Partition of India while saving 600 students trapped in communal riots.
+        Raised by his mother, a schoolteacher, in a refugee camp, Rami learned the values of hard work, empathy, and integrity
+        from an early age.
+      </p>
+      <a href="#" class="about-btn">Learn More</a>
+    </div>
+  </section>
+
+  <section class="about-quote">
+    <p>
+      “Building meaningful businesses through international trade is not just about success—<br>
+      it’s about creating opportunities, driving growth, and contributing to the nation’s future.”
+    </p>
+    <h3>- LORD RAMI RANGER FRSA</h3>
+  </section>
+
+  <section class="about-two-col">
+    <div>
+      <img src="images/aboutthree.png" alt="Early Foundations">
+    </div>
+
+    <div class="about-copy">
+      <h2>EARLY FOUNDATIONS</h2>
+      <h4>VALUES THAT ENDURED</h4>
+      <p>
+        Behind Rami Ranger’s success lies a powerful story of courage, sacrifice, and resilience.
+        Shaped by the hardships of Partition, his parents’ strength, dedication, and perseverance laid the foundation
+        for everything that followed.
+      </p>
+      <p>
+        Explore the book to discover their inspiring journey and the values that helped shape an extraordinary future.
+      </p>
+      <a href="#" class="about-btn">Learn More</a>
+    </div>
+  </section>
+
+  <section class="legacy-section">
+    <div class="about-copy">
+      <h4>HONOURING A LEGACY OF COURAGE</h4>
+      <p>
+        Rami Ranger’s father was a man of courage and integrity. During the Partition of India in 1947,
+        he stood by his values and sacrificed his life in the face of violence. His bravery left a lasting imprint on his family.
+      </p>
+      <p>
+        Though Rami Ranger was very young when he lost his father, the values he instilled — courage, honesty,
+        and doing what is right — became a guiding force throughout his life.
+      </p>
+    </div>
+
+    <div>
+      <img src="images/aboutfour.png" alt="Family Legacy">
+    </div>
+  </section>
+
+  <section class="about-blue-gallery">
+    <p>
+      After relocating to the United Kingdom, Ranger began his journey by taking on a series of hands-on roles,
+      demonstrating both resilience and determination. He initially worked as a chef at KFC in Norbury, South London,
+      where his dedication quickly earned him a promotion to district manager. Building on this momentum, he went on
+      to run a Post Office branch and a newsagent’s shop, later gaining further retail experience with Currys.
+      These formative roles laid the foundation for his strong work ethic and entrepreneurial mindset.
+    </p>
+
+    <div class="about-gallery">
+      <img src="images/aboutfive.png" alt="">
+      <img src="images/aboutsix.png" alt="">
+      <img src="images/aboutseven.png" alt="">
+      <img src="images/abouteight.png" alt="">
+    </div>
+  </section>
+
+  <section class="business-section">
+    <div>
+      <img src="images/aboutnine.png" alt="Business">
+    </div>
+
+    <div class="about-copy">
+      <h2>BUSINESS</h2>
+      <h4>BUILDING EMPIRE</h4>
+      <p>
+        From these humble beginnings, Rami’s determination led him to the UK, where he established Sun Mark Ltd and Sea, Air & Land Forwarding Ltd—two of Britain’s fastest-growing companies.
+        Sun Mark Ltd has achieved an unprecedented feat: five consecutive Queen’s Awards for Enterprise in International Trade,
+        a testament to Rami’s business acumen and leadership.
+      </p>
+      <a href="#" class="about-btn">Learn More</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="images/logo.png" class="footer-logo" alt="Lord Rami Ranger FRSA Logo">
+    <h4>LORD RAMI RANGER FRSA</h4>
+
+    <p>
+      SUN HOUSE, 428 LONG DRIVE<br>
+      GREENFORD, UB6 8UH<br>
+      TEL: +44 (0) 20 8575 3700
+    </p>
+
+    <div class="footer-socials">
+      <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+    </div>
+  </footer>
+
+  <div class="bottom-bar">
+    <p>© 2024 All Rights Reserved | LORD RAMI RANGER FRSA</p>
+    <p>PRIVACY POLICY & TERMS</p>
+  </div>
+
+</body>
+</html>
