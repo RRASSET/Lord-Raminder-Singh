@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lord Rami Ranger FRSA</title>
+
+  <!-- Nunito Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      color: #111;
+      background: white;
+      overflow-x: hidden;
+      line-height: 1.4;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      height: 34px;
+      background: #6d9ca1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 105px;
+    }
+
+    .socials a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 17px;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 142px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 105px;
+      border-bottom: 2px solid #111;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .brand {
+      width: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 82px;
+      height: auto;
+      display: block;
+    }
+
+    .brand span {
+      margin-top: 3px;
+      color: #6d9ca1;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #000;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 17px;
+      color: #06172a;
+      margin-left: 20px;
+    }
+
+    .mobile-menu-button {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .hero {
+      height: 675px;
+      background-image: linear-gradient(rgba(0,0,0,.43), rgba(0,0,0,.43)), url("images/hero-award.jpg");
+      background-position: center top;
+      background-size: cover;
+      background-color: #333;
+    }
+
+    .intro-section,
+    .sea-section {
+      max-width: 1365px;
+      margin: 0 auto;
+      padding: 46px 5.6%;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 115px;
+      align-items: center;
+      min-height: 515px;
+    }
+
+    .intro-image,
+    .sea-image {
+      height: 397px;
+      background: #ddd;
+      overflow: hidden;
+    }
+
+    .content-block {
+      max-width: 360px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .2px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      line-height: 1.05;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      letter-spacing: .2px;
+    }
+
+    .content-block p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.33;
+      color: #111;
+      margin-bottom: 26px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      height: 38px;
+      padding: 0 17px;
+      border: 1.4px solid #111;
+      background: #fff;
+      color: #111;
+      font-size: 11px;
+      font-weight: 500;
+      transition: all .25s ease;
+    }
+
+    .btn-outline:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .legacy-section {
+      background: #6d9ca1;
+      color: #fff;
+      position: relative;
+      min-height: 505px;
+      display: flex;
+      align-items: center;
+    }
+
+    .legacy-inner {
+      width: 100%;
+      max-width: 1365px;
+      margin: 0 auto;
+      padding: 0 7%;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 94px;
+      align-items: center;
+    }
+
+    .legacy-copy {
+      max-width: 410px;
+    }
+
+    .legacy-copy .section-title,
+    .legacy-copy .eyebrow,
+    .legacy-copy p {
+      color: #fff;
+    }
+
+    .legacy-copy p {
+      font-size: 14px;
+      line-height: 1.34;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .legacy-image {
+      width: 505px;
+      height: 428px;
+      justify-self: start;
+      background: #ddd;
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 40px;
+      font-weight: 200;
+      line-height: 1;
+      opacity: .9;
+    }
+
+    .slider-arrow.left { left: 38px; }
+    .slider-arrow.right { right: 38px; }
+
+    .sea-section {
+      grid-template-columns: 1.02fr .98fr;
+      gap: 125px;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .sea-image {
+      height: 405px;
+    }
+
+    .wix-strip {
+      height: 30px;
+      border-top: 1px solid #ced7e2;
+      border-bottom: 1px solid #ced7e2;
+      background: #f5f8fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #4c5a63;
+      font-size: 11px;
+    }
+
+    .wix-strip strong {
+      color: #111;
+      font-size: 16px;
+      letter-spacing: -.5px;
+    }
+
+    .wix-strip a {
+      background: #fff;
+      border: 1px solid #7dadff;
+      color: #2371d9;
+      padding: 2px 9px;
+      border-radius: 12px;
+      font-size: 10px;
+    }
+
+    .quote-section {
+      min-height: 575px;
+      background: #000;
+      color: #fff;
+      display: grid;
+      grid-template-columns: .35fr .65fr;
+      align-items: stretch;
+    }
+
+    .quote-image {
+      background-image: linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)), url("images/quote-stage.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(1);
+    }
+
+    .quote-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 9% 70px 5%;
+    }
+
+    .quote-text {
+      font-size: 34px;
+      line-height: .98;
+      font-weight: 500;
+      max-width: 790px;
+      margin-bottom: 58px;
+      letter-spacing: -.8px;
+    }
+
+    .quote-author {
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .philanthropy {
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 20px;
+    }
+
+    .philanthropy-inner {
+      max-width: 560px;
+    }
+
+    .philanthropy .section-title {
+      margin-bottom: 35px;
+    }
+
+    .philanthropy p {
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 500;
+      margin-bottom: 26px;
+    }
+
+    .learn-mini {
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 900;
+      text-transform: uppercase;
+      display: block;
+      margin: 0 auto 9px;
+      max-width: 310px;
+    }
+
+    .learn-link {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+
+    .footer-main {
+      min-height: 365px;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+
+    .footer-logo-img {
+      width: 95px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .footer-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-address {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin-bottom: 18px;
+      font-style: normal;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      font-size: 17px;
+    }
+
+    .footer-bottom {
+      background: #6d9ca1;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 80px;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .intro-image img,
+    .legacy-image img,
+    .sea-image img {
+      height: 100%;
+    }
+
+    @media screen and (max-width: 900px) {
+      .top-bar,
+      .navbar {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .navbar {
+        height: auto;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .brand {
+        width: 190px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .nav-icons {
+        display: none;
+      }
+
+      .hero {
+        height: 520px;
+      }
+
+      .intro-section,
+      .sea-section {
+        grid-template-columns: 1fr;
+        padding: 45px 25px;
+        gap: 35px;
+        min-height: auto;
+      }
+
+      .intro-image,
+      .sea-image {
+        height: auto;
+      }
+
+      .intro-image img,
+      .sea-image img {
+        height: auto;
+      }
+
+      .content-block {
+        max-width: 100%;
+      }
+
+      .legacy-section {
+        padding: 45px 25px;
+        min-height: auto;
+      }
+
+      .legacy-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0;
+      }
+
+      .legacy-copy {
+        max-width: 100%;
+      }
+
+      .legacy-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .legacy-image img {
+        height: auto;
+      }
+
+      .slider-arrow {
+        display: none;
+      }
+
+      .quote-section {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-image {
+        min-height: 360px;
+      }
+
+      .quote-copy {
+        padding: 55px 24px;
+      }
+
+      .quote-text,
+      .quote-author {
+        font-size: 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 20px;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      .top-bar {
+        padding: 0 20px;
+      }
+
+      .socials a {
+        margin-left: 18px;
+        font-size: 15px;
+      }
+
+      .logo {
+        width: 72px;
+      }
+
+      .menu {
+        gap: 14px;
+      }
+
+      .menu a {
+        font-size: 10px;
+      }
+
+      .hero {
+        height: 330px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+
+      .quote-text,
+      .quote-author {
+        font-size: 23px;
+      }
+
+      .wix-strip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="socials">
+        <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <img src="logo.png" class="logo" alt="Lord Rami Ranger FRSA Logo">
+        <span>LORD RAMI RANGER FRSA</span>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#philanthropy">Philanthropy</a>
+        <a href="index.html#business">Business</a>
+        <a href="index.html#books">Books</a>
+        <a href="index.html#recognition">Recognition</a>
+      </div>
+
+      <div class="nav-icons">
+        <a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="#" aria-label="Account"><i class="fa-regular fa-user"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Lord Rami Ranger award photograph"></section>
+
+    <section class="intro-section">
+      <div class="intro-image">
+        <img src="images/business-award.jpg" alt="Lord Rami Ranger receiving business leadership recognition">
+      </div>
+
+      <div class="content-block">
+        <div class="eyebrow">A Legacy of Global Trade</div>
+        <h1 class="section-title">Business Leadership<br>&amp; Global Success</h1>
+        <p>
+          Lord Rami Ranger FRSA is a pioneering business leader whose remarkable achievements in international trade have set new benchmarks for British entrepreneurship. As the Chairman of Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd, Lord Rami has built two of Britain’s fastest-growing companies, making significant contributions to the British economy and establishing a global reputation for excellence in business.
+        </p>
+        <a href="#" class="btn-outline">Learn More</a>
+      </div>
+    </section>
+
+    <section class="legacy-section">
+      <span class="slider-arrow left">‹</span>
+      <span class="slider-arrow right">›</span>
+
+      <div class="legacy-inner">
+        <div class="legacy-copy">
+          <div class="eyebrow">Excellence in International Trade</div>
+          <h2 class="section-title">Sun Mark Ltd: A Legacy<br>of Global Trade</h2>
+          <p>
+            Founded by Lord Rami Ranger, Sun Mark Ltd is a globally renowned FMCG Fast Moving Consumer Goods company that exports British products to over 130 countries. With a business model rooted in innovation, efficiency, and quality, Sun Mark Ltd has become a symbol of British excellence in international trade.
+          </p>
+          <p>
+            Sun Mark Ltd holds a unique place in British business history as the only company to have won five consecutive Queen’s Awards for Enterprise in International Trade from 2009 to 2013—a record that remains unmatched to this day.
+          </p>
+        </div>
+
+        <div class="legacy-image">
+          <img src="images/sunmark-worker.jpg" alt="Sun Mark worker in warehouse">
+        </div>
+      </div>
+    </section>
+
+    <section class="sea-section">
+      <div class="sea-image">
+        <img src="images/warehouse-machinery.jpg" alt="Warehouse machinery and production line">
+      </div>
+
+      <div class="content-block">
+        <div class="eyebrow">Sea, Air &amp; Land Forwarding Ltd</div>
+        <h2 class="section-title">Sea, Air &amp; Land<br>Forwarding Ltd</h2>
+        <p>
+          Sea, Air &amp; Land Forwarding Ltd provides end-to-end supply chain solutions, including freight forwarding, warehousing, and distribution services. By offering customized logistics support, the company enables businesses to access new markets, streamline operations, and enhance their international presence.
+        </p>
+        <p>
+          With a strong focus on efficiency and customer satisfaction, Sea, Air &amp; Land Forwarding Ltd plays a critical role in facilitating global trade.
+        </p>
+      </div>
+    </section>
+
+    <div class="wix-strip">
+      <strong>WIX</strong>
+      <span>This website was built on Wix. Create yours today.</span>
+      <a href="#">Get Started</a>
+    </div>
+
+    <section class="quote-section">
+      <div class="quote-image" aria-label="Lord Rami Ranger speaking at podium"></div>
+      <div class="quote-copy">
+        <blockquote class="quote-text">
+          “Business Is About Much More Than Profit—It’s About Creating Value, Building Relationships, And Making A Positive Impact On The World.”
+        </blockquote>
+        <div class="quote-author">Lord Rami Ranger FRSA</div>
+      </div>
+    </section>
+
+    <section class="philanthropy">
+      <div class="philanthropy-inner">
+        <div class="eyebrow">Philanthropy</div>
+        <h2 class="section-title">Innovating For<br>The Future</h2>
+        <p>
+          Under Lord Rami’s leadership, both Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd continue to innovate and grow, adapting to the demands of an ever-changing global marketplace. By leveraging cutting-edge technology, fostering strategic partnerships, and maintaining a relentless focus on quality, Lord Rami ensures that his companies remain at the forefront of international trade.
+        </p>
+        <span class="learn-mini">Learn more about Lord Rami’s global impact and philanthropic initiatives</span>
+        <a class="learn-link" href="#">Learn More</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer-main">
+      <div>
+        <img src="logo.png" class="footer-logo-img" alt="Lord Rami Ranger FRSA Logo">
+        <h2 class="footer-title">Lord Rami Ranger FRSA</h2>
+        <address class="footer-address">
+          Sun House, 428 Long Drive<br>
+          Greenford, UB6 8UH<br>
+          Tel: +44 (0) 20 8575 3700
+        </address>
+        <div class="footer-socials">
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-bottom">
+      <div>© 2026 All Rights Reserved | Lord Rami Ranger FRSA</div>
+      <a href="#">Privacy Policy &amp; Terms</a>
+    </section>
+  </footer>
+</body>
+</html>
