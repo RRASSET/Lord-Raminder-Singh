@@ -16,6 +16,17 @@
       font-family: 'Nunito Sans', sans-serif;
       color: #111;
       background: white;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .top-bar {
@@ -23,7 +34,7 @@
       background: #6d9ca1;
       display: flex;
       justify-content: flex-end;
-     
+      align-items: center;
       padding: 0 105px;
     }
 
@@ -39,25 +50,35 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 105px;
+      background: white;
     }
 
     .brand {
+      width: 190px;
       text-align: center;
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .logo { width: 82px; }
+    .logo {
+      width: 82px;
+      height: auto;
+    }
 
     .brand span {
       display: block;
       font-size: 9px;
       font-weight: 700;
       color: #6d9ca1;
+      white-space: nowrap;
     }
 
     .menu {
       display: flex;
       gap: 38px;
+      align-items: center;
     }
 
     .menu a {
@@ -73,7 +94,10 @@
       font-size: 12px;
     }
 
-    .philanthropy-hero { height: 650px; }
+    .philanthropy-hero {
+      height: 650px;
+      overflow: hidden;
+    }
 
     .philanthropy-hero img {
       width: 100%;
@@ -89,12 +113,12 @@
       align-items: center;
     }
 
-   .bridge-section img {
-  width: 100%;
-  height: 540px;
-  object-fit: cover;
-  object-position: center;
-}
+    .bridge-section img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      object-position: center;
+    }
 
     .bridge-copy h2 {
       font-size: 28px;
@@ -138,6 +162,7 @@
       max-width: 1000px;
       margin: auto;
       font-size: 16px;
+      line-height: 1.5;
     }
 
     .gallery-section {
@@ -148,12 +173,12 @@
     }
 
     .gallery-card img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  object-position: top;
-  margin-bottom: 8px;
-}
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: top;
+      margin-bottom: 8px;
+    }
 
     .gallery-card p {
       font-size: 12px;
@@ -171,6 +196,9 @@
     .philanthropy-quote p {
       font-size: 24px;
       font-style: italic;
+      line-height: 1.35;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .philanthropy-quote h3 {
@@ -186,12 +214,18 @@
 
     .footer-logo {
       width: 95px;
-      margin-bottom: 10px;
+      height: auto;
+      margin: 0 auto 10px;
     }
 
-    footer h4 { font-size: 14px; }
+    footer h4 {
+      font-size: 14px;
+    }
 
-    footer p { font-size: 11px; }
+    footer p {
+      font-size: 11px;
+      line-height: 1.4;
+    }
 
     .footer-socials a {
       margin: 0 8px;
@@ -207,6 +241,269 @@
       padding: 12px 80px;
       font-size: 10px;
     }
+
+    /* ============================= */
+    /* RESPONSIVE FIX */
+    /* ============================= */
+
+    @media screen and (max-width: 1100px) {
+      .top-bar,
+      .navbar {
+        padding-left: 45px;
+        padding-right: 45px;
+      }
+
+      .menu {
+        gap: 24px;
+      }
+
+      .bridge-section {
+        gap: 45px;
+      }
+
+      .gallery-section {
+        padding: 45px;
+        gap: 40px 25px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .top-bar {
+        height: 45px;
+        padding: 0 35px;
+      }
+
+      .navbar {
+        height: auto;
+        padding: 30px 25px 28px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .brand {
+        width: auto;
+      }
+
+      .logo {
+        width: 110px;
+      }
+
+      .brand span {
+        font-size: 13px;
+      }
+
+      .menu {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 38px;
+        row-gap: 24px;
+      }
+
+      .menu a {
+        font-size: 18px;
+      }
+
+      .menu a:last-child {
+        width: 100%;
+        text-align: center;
+      }
+
+      .page-back {
+        padding: 12px 25px;
+      }
+
+      .philanthropy-hero {
+        height: auto;
+      }
+
+      .philanthropy-hero img {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .bridge-section {
+        grid-template-columns: 1fr;
+        padding: 45px 25px;
+        gap: 35px;
+      }
+
+      .bridge-section img {
+        height: auto;
+      }
+
+      .blue-intro {
+        padding: 45px 25px;
+      }
+
+      .blue-intro h2 {
+        font-size: 25px;
+      }
+
+      .blue-intro p {
+        font-size: 15px;
+      }
+
+      .gallery-section {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 45px 25px;
+        gap: 35px 22px;
+      }
+
+      .gallery-card img {
+        height: 310px;
+      }
+
+      .philanthropy-quote {
+        padding: 60px 25px;
+      }
+
+      .philanthropy-quote p {
+        font-size: 21px;
+      }
+
+      .bottom-bar {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        padding: 14px 20px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .top-bar {
+        height: 45px;
+        padding: 0 32px;
+      }
+
+      .socials a {
+        font-size: 18px;
+        margin-left: 24px;
+      }
+
+      .navbar {
+        padding: 28px 18px 30px;
+        gap: 22px;
+      }
+
+      .logo {
+        width: 100px;
+      }
+
+      .brand span {
+        font-size: 12px;
+      }
+
+      .menu {
+        column-gap: 28px;
+        row-gap: 22px;
+      }
+
+      .menu a {
+        font-size: 16px;
+      }
+
+      .bridge-section {
+        padding: 42px 20px;
+        gap: 28px;
+      }
+
+      .bridge-copy h2 {
+        font-size: 24px;
+        line-height: 1.1;
+      }
+
+      .bridge-copy h4 {
+        font-size: 12px;
+      }
+
+      .bridge-copy p {
+        font-size: 13px;
+      }
+
+      .blue-intro h2 {
+        font-size: 22px;
+      }
+
+      .blue-intro p {
+        font-size: 14px;
+      }
+
+      .gallery-section {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        gap: 32px;
+      }
+
+      .gallery-card img {
+        height: auto;
+      }
+
+      .gallery-card p {
+        font-size: 12.5px;
+      }
+
+      .philanthropy-quote {
+        padding: 50px 20px;
+      }
+
+      .philanthropy-quote p {
+        font-size: 18px;
+      }
+
+      .philanthropy-quote h3 {
+        font-size: 13px;
+      }
+
+      footer {
+        padding: 55px 20px 45px;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      .menu {
+        column-gap: 20px;
+        row-gap: 20px;
+      }
+
+      .menu a {
+        font-size: 15px;
+      }
+
+      .logo {
+        width: 95px;
+      }
+
+      .brand span {
+        font-size: 11px;
+      }
+
+      .bridge-section,
+      .gallery-section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .blue-intro {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .bridge-copy h2,
+      .blue-intro h2 {
+        font-size: 21px;
+      }
+
+      .philanthropy-quote p {
+        font-size: 16px;
+      }
+
+      .bottom-bar {
+        font-size: 9px;
+      }
+    }
   </style>
 </head>
 
@@ -221,7 +518,7 @@
 
 <nav class="navbar">
   <a href="index.html" class="brand">
-    <img src="logo.png" class="logo">
+    <img src="logo.png" class="logo" alt="Lord Rami Ranger FRSA Logo">
     <span>LORD RAMI RANGER FRSA</span>
   </a>
 
@@ -240,11 +537,12 @@
 </div>
 
 <section class="philanthropy-hero">
-  <img src="bannerone.png">
+  <img src="bannerone.png" alt="Philanthropy Banner">
 </section>
 
 <section class="bridge-section">
-  <img src="buildingbridges.png">
+  <img src="buildingbridges.png" alt="Building Bridges">
+
   <div class="bridge-copy">
     <h2>BUILDING BRIDGES</h2>
     <h4>PROMOTING SOCIAL COHESION & UNITY</h4>
@@ -266,29 +564,65 @@
 
 <section class="gallery-section">
 
-  <div class="gallery-card"><img src="philanthropyone.png"><p>The Lord Rami Ranger FRSA Centre for Graduate Entrepreneurship: In a major philanthropic gesture, Lord Rami donated £250,000 to London South Bank University, establishing a hub for aspiring entrepreneurs.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyone.png" alt="">
+    <p>The Lord Rami Ranger FRSA Centre for Graduate Entrepreneurship: In a major philanthropic gesture, Lord Rami donated £250,000 to London South Bank University, establishing a hub for aspiring entrepreneurs.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropytwo.png"><p>Supporting Student Facilities: His £200,000 donation to the University of West London funded the creation of a new pavilion for students.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropytwo.png" alt="">
+    <p>Supporting Student Facilities: His £200,000 donation to the University of West London funded the creation of a new pavilion for students.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropythree.png"><p>The Pakistan, India & UK Friendship Forum: Founded to unite communities through dialogue and cooperation.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropythree.png" alt="">
+    <p>The Pakistan, India & UK Friendship Forum: Founded to unite communities through dialogue and cooperation.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropyfour.png"><p>Hindu Forum of Britain: Helping unite Hindu organisations under one collective voice.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyfour.png" alt="">
+    <p>Hindu Forum of Britain: Helping unite Hindu organisations under one collective voice.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropyfive.png"><p>Thames Hospice: £100,000 donation supporting compassionate end-of-life care.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyfive.png" alt="">
+    <p>Thames Hospice: £100,000 donation supporting compassionate end-of-life care.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropysix.png"><p>Cancer Research UK: £50,000 contribution towards life-saving research.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropysix.png" alt="">
+    <p>Cancer Research UK: £50,000 contribution towards life-saving research.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropyseven.png"><p>The Prince's Trust: Supporting young people with £150,000 donation.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyseven.png" alt="">
+    <p>The Prince's Trust: Supporting young people with £150,000 donation.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropyeight.png"><p>Gandhi Memorial Foundation Trust: Supporting the Gandhi statue in Parliament Square.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyeight.png" alt="">
+    <p>Gandhi Memorial Foundation Trust: Supporting the Gandhi statue in Parliament Square.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropynine.png"><p>Combat Stress: Supporting veterans’ mental health with £25,000 donation.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropynine.png" alt="">
+    <p>Combat Stress: Supporting veterans’ mental health with £25,000 donation.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropyten.png"><p>AIDS and Cancer Research: Helped raise £100,000 for medical research.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyten.png" alt="">
+    <p>AIDS and Cancer Research: Helped raise £100,000 for medical research.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropyeleven.png"><p>Help for Heroes: Raised £25,000 to support wounded veterans.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropyeleven.png" alt="">
+    <p>Help for Heroes: Raised £25,000 to support wounded veterans.</p>
+  </div>
 
-  <div class="gallery-card"><img src="philanthropytwelve.png"><p>Indian Gymkhana: £125,000 contribution for athlete accommodation facilities.</p></div>
+  <div class="gallery-card">
+    <img src="philanthropytwelve.png" alt="">
+    <p>Indian Gymkhana: £125,000 contribution for athlete accommodation facilities.</p>
+  </div>
 
 </section>
 
@@ -298,7 +632,7 @@
 </section>
 
 <footer>
-  <img src="logo.png" class="footer-logo">
+  <img src="logo.png" class="footer-logo" alt="Lord Rami Ranger FRSA Logo">
   <h4>LORD RAMI RANGER FRSA</h4>
   <p>SUN HOUSE, 428 LONG DRIVE<br>GREENFORD</p>
 
