@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recognition | Lord Rami Ranger FRSA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      color: #111;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wix-strip {
+      height: 30px;
+      background: #f5f8fb;
+      border-bottom: 1px solid #cfd8df;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #4c5a63;
+    }
+
+    .wix-strip strong {
+      font-size: 16px;
+      color: #111;
+    }
+
+    .wix-strip a {
+      border: 1px solid #7dadff;
+      color: #2371d9;
+      padding: 2px 9px;
+      border-radius: 12px;
+      font-size: 10px;
+      background: #fff;
+    }
+
+    .top-bar {
+      height: 34px;
+      background: #6d9ca1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 105px;
+    }
+
+    .socials a {
+      color: #fff;
+      margin-left: 18px;
+      font-size: 17px;
+    }
+
+    .navbar {
+      height: 112px;
+      display: flex;
+      align-items: center;
+      padding: 0 105px;
+      background: #fff;
+      border-bottom: 1px solid #111;
+    }
+
+    .brand {
+      width: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo {
+      width: 82px;
+    }
+
+    .brand span {
+      margin-top: 3px;
+      color: #6d9ca1;
+      font-size: 9px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      gap: 38px;
+      margin-left: auto;
+      align-items: center;
+    }
+
+    .menu a {
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 24px;
+      margin-left: 35px;
+      font-size: 16px;
+      color: #06172a;
+    }
+
+    .hero {
+      height: 525px;
+      background: url("recognitionbanner.png") center center / cover no-repeat;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 72px 20px 35px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .intro h1 {
+      margin: 0 0 30px;
+      font-size: 28px;
+      line-height: 1.05;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .intro p {
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    .awards-grid {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px 20px 105px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 115px;
+      row-gap: 80px;
+    }
+
+    .award-card {
+      text-align: left;
+    }
+
+    .award-icon {
+      width: 82px;
+      height: 95px;
+      margin: 0 auto 26px;
+      color: #77839b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 78px;
+    }
+
+    .award-card h3 {
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 900;
+      margin: 0 0 5px;
+    }
+
+    .award-card p {
+      font-size: 10.5px;
+      line-height: 1.35;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .quote-section {
+      min-height: 360px;
+      background: #6d9ca1;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 60px 80px;
+    }
+
+    .quote-section::before,
+    .quote-section::after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 44px;
+      font-weight: 200;
+      opacity: .9;
+    }
+
+    .quote-section::before {
+      content: "‹";
+      left: 38px;
+    }
+
+    .quote-section::after {
+      content: "›";
+      right: 38px;
+    }
+
+    .quote-inner {
+      max-width: 850px;
+    }
+
+    .quote-text {
+      font-size: 36px;
+      line-height: .95;
+      font-weight: 400;
+      margin: 0 0 45px;
+      letter-spacing: -1px;
+    }
+
+    .quote-author {
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .gallery {
+      width: 100%;
+      background: #fff;
+      padding: 85px 0 70px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .footer-main {
+      min-height: 365px;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+
+    .footer-logo-img {
+      width: 95px;
+      margin: 0 auto 10px;
+    }
+
+    .footer-title {
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    .footer-address {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin: 0 0 18px;
+      font-style: normal;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      font-size: 17px;
+    }
+
+    .footer-bottom {
+      background: #6d9ca1;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 105px;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 900px) {
+      .top-bar,
+      .navbar {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .navbar {
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      .menu {
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .nav-icons {
+        display: none;
+      }
+
+      .hero {
+        height: 430px;
+      }
+
+      .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 55px;
+        row-gap: 60px;
+      }
+
+      .quote-text {
+        font-size: 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        padding: 14px 20px;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      .wix-strip {
+        display: none;
+      }
+
+      .top-bar {
+        padding: 0 20px;
+      }
+
+      .logo {
+        width: 72px;
+      }
+
+      .menu {
+        gap: 14px;
+      }
+
+      .menu a {
+        font-size: 10px;
+      }
+
+      .hero {
+        height: 320px;
+      }
+
+      .intro h1 {
+        font-size: 24px;
+      }
+
+      .awards-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 70px;
+      }
+
+      .quote-section {
+        padding: 55px 24px;
+      }
+
+      .quote-section::before,
+      .quote-section::after {
+        display: none;
+      }
+
+      .quote-text {
+        font-size: 23px;
+      }
+
+      .quote-author {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wix-strip">
+    <strong>WIX</strong>
+    <span>This website was built on Wix. Create yours today.</span>
+    <a href="#">Get Started</a>
+  </div>
+
+  <header>
+    <div class="top-bar">
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <img src="logo.png" class="logo" alt="Lord Rami Ranger FRSA Logo">
+        <span>LORD RAMI RANGER FRSA</span>
+      </a>
+
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="philanthropy.html">Philanthropy</a>
+        <a href="business.html">Business</a>
+        <a href="books.html">Books</a>
+        <a href="recognition.html">Recognition</a>
+      </div>
+
+      <div class="nav-icons">
+        <a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="#" aria-label="Account"><i class="fa-regular fa-user"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero"></section>
+
+    <section class="intro">
+      <div class="eyebrow">Philanthropy</div>
+      <h1>Champion Of Political &<br>Social Change</h1>
+      <p>
+        For Lord Rami Ranger, success is measured not only by personal achievements but by the positive impact one can make on society. Guided by his mother’s principles of empathy and selflessness, Lord Rami has dedicated his time, resources, and influence to uplifting communities and supporting causes that foster education, healthcare, and social unity. His philanthropic efforts reflect a deep commitment to giving back, improving lives, and building a more inclusive and compassionate world.
+      </p>
+    </section>
+
+    <section class="awards-grid">
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Queen’s Awards for Enterprise (2009 - 2013)</h3>
+        <p>Sun Mark Ltd was honoured with the Queen’s Award for Enterprise in International Trade for five consecutive years, marking Lord Rami’s company as a leader in British exports.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Doctor of Letters (D.Litt) from the University of West London (2016)</h3>
+        <p>This honorary degree celebrates Lord Rami’s significant contributions to business and his support for educational initiatives.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Doctorate from Preston University (USA) (2016)</h3>
+        <p>Awarded in recognition of Lord Rami’s exceptional contributions to international trade and his ongoing work in promoting global commerce and community service.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Freeman of the City of London</h3>
+        <p>In recognition of his charitable work and support for British trade and industry, Lord Rami was granted the prestigious title of Freeman of the City of London.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Man of the Year — GG2 Leadership Awards (2014)</h3>
+        <p>At the GG2 Leadership Awards, Lord Rami was honoured as Man of the Year by the Prime Minister, Rt Hon. David Cameron MP.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>European Business Awards: Export Champion of the Year (2012/2013)</h3>
+        <p>Lord Rami was named Export Champion of the Year at the prestigious European Business Awards, recognising his outstanding achievements in international trade.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Hot 100 Investec Award (2013)</h3>
+        <p>Lord Rami was named a recipient of the Hot 100 Investec Award, acknowledging his outstanding entrepreneurial success and business leadership.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Patron of Combat Stress</h3>
+        <p>Recognized for his generous donation and support of veterans’ mental health services through Combat Stress, a leading UK charity.</p>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Support for Gandhi Memorial</h3>
+        <p>Lord Rami contributed £100,000 to the Gandhi Memorial Foundation, helping to erect the Mahatma Gandhi statue in London’s Parliament Square.</p>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="quote-inner">
+        <p class="quote-text">“Winning The Queen’s Award Is The Pinnacle Of Business Success In Britain. To Have Done It Five Times In A Row Is Something I Could Only Have Dreamed Of.”</p>
+        <div class="quote-author">Lord Rami Ranger FRSA</div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <img src="recognitiongallery.png" alt="Lord Rami Ranger recognition collage">
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer-main">
+      <div>
+        <img src="logo.png" class="footer-logo-img" alt="Lord Rami Ranger FRSA Logo">
+        <h2 class="footer-title">Lord Rami Ranger FRSA</h2>
+
+        <address class="footer-address">
+          Sun House, 428 Long Drive<br>
+          Greenford, UB6 8UH<br>
+          Tel: +44 (0) 20 8575 3700
+        </address>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-bottom">
+      <div>© 2026 All Rights Reserved | Lord Rami Ranger FRSA</div>
+      <a href="#">Privacy Policy &amp; Terms</a>
+    </section>
+  </footer>
+
+</body>
+</html>
