@@ -89,19 +89,21 @@
       text-transform: uppercase;
     }
 
-    /* BANNER FIXED */
     .about-hero {
       width: 100%;
       height: 705px;
       overflow: hidden;
       background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .about-hero img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: top center;
+      object-fit: contain;
+      object-position: center center;
       display: block;
     }
 
@@ -118,11 +120,13 @@
       width: 100%;
       height: 540px;
       object-fit: cover;
+      object-position: top center;
       display: block;
     }
 
     .about-copy {
       max-width: 440px;
+      text-align: left;
     }
 
     .about-copy h2 {
@@ -197,11 +201,14 @@
       width: 100%;
       height: 540px;
       object-fit: cover;
+      object-position: top center;
       display: block;
     }
 
     .legacy-section .about-copy {
-      padding-left: 30px;
+      max-width: 440px;
+      padding-left: 0;
+      text-align: left;
     }
 
     .about-blue-gallery {
@@ -229,6 +236,7 @@
       width: 100%;
       height: 405px;
       object-fit: cover;
+      object-position: top center;
       display: block;
     }
 
@@ -245,6 +253,7 @@
       width: 100%;
       height: 540px;
       object-fit: cover;
+      object-position: top center;
       display: block;
     }
 
@@ -315,10 +324,6 @@
 
       .about-hero {
         height: 520px;
-      }
-
-      .about-hero img {
-        object-position: top center;
       }
 
       .about-two-col,
@@ -444,7 +449,8 @@
 
   <section class="legacy-section">
     <div class="about-copy">
-      <h4>HONOURING A LEGACY OF COURAGE</h4>
+      <h2>HONOURING A LEGACY OF COURAGE</h2>
+      <h4>VALUES THAT ENDURED</h4>
       <p>
         Rami Ranger’s father was a man of courage and integrity. During the Partition of India in 1947,
         he stood by his values and sacrificed his life in the face of violence. His bravery left a lasting imprint on his family.
@@ -453,6 +459,7 @@
         Though Rami Ranger was very young when he lost his father, the values he instilled — courage, honesty,
         and doing what is right — became a guiding force throughout his life.
       </p>
+      <a href="#" class="about-btn">Learn More</a>
     </div>
 
     <div>
