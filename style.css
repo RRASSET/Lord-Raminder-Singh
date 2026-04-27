@@ -644,3 +644,42 @@ footer p {
     height: 205px;
   }
 }
+
+
+/* FIX 1: keep logo centered on phone/tablet only */
+@media (max-width: 1024px) {
+  .brand {
+    align-items: center;
+  }
+
+  .brand .logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* FIX 2: give slider arrows more clickable space on phone/tablet only */
+@media (max-width: 1024px) {
+  .awards {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .left {
+    left: 10px;
+  }
+
+  .right {
+    right: 10px;
+  }
+
+  .slider-btn {
+    width: 34px;
+    height: 54px;
+  }
+}
+
+/* FIX 3: stop faces being cropped — PC + phone */
+.news-card img {
+  object-position: top center;
+}
