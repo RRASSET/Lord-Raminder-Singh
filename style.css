@@ -372,8 +372,13 @@ footer p {
 .footer-socials a {
   color: #111;
   text-decoration: none;
-  margin: 0 10px;
-  font-size: 17px;
+  margin: 0 14px;
+  font-size: 23px; /* bigger icons */
+  transition: transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2); /* nice hover effect */
 }
 
 .bottom-bar {
