@@ -686,3 +686,100 @@ footer p {
 .news-card img {
   object-position: top center;
 }
+
+
+/* MENU STYLE UPGRADE */
+
+.menu a {
+  position: relative;
+  color: #111;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  transition: color 0.25s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #6d9ca1;
+  transition: width 0.25s ease;
+}
+
+.menu a:hover {
+  color: #6d9ca1;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* HERO BUTTON UPGRADE */
+
+.buttons a {
+  font-size: 16px;
+  padding: 20px 70px;
+  transition: all 0.25s ease;
+}
+
+.buttons a:hover {
+  background: white;
+  color: #111;
+}
+
+.buttons .white:hover {
+  background: transparent;
+  color: white;
+}
+
+/* TEXT NEXT TO IMAGE UPGRADE */
+
+.content-text h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.content-text h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.content-text p {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* MOBILE KEEP CLEAN */
+
+@media (max-width: 767px) {
+  .menu a {
+    font-size: 16px;
+    padding-bottom: 6px;
+  }
+
+  .buttons a {
+    font-size: 14px;
+    padding: 16px 24px;
+  }
+
+  .content-text h2 {
+    font-size: 28px;
+  }
+
+  .content-text h3 {
+    font-size: 14px;
+  }
+
+  .content-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
