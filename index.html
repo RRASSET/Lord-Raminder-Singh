@@ -338,15 +338,15 @@ let sliders = {
   sliderTwo: 0
 };
 
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
+}
+
 function moveSlide(id, dir) {
   const slider = document.getElementById(id);
   const total = slider.children.length / 2;
   const cardWidth = 295;
-
-  function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("active");
-}
 
   sliders[id] += dir;
 
