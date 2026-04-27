@@ -486,6 +486,52 @@
         padding: 55px 20px;
       }
     }
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    position: absolute;
+    right: 28px;
+    top: 38px;
+    z-index: 9999;
+  }
+
+  .menu {
+    display: none !important;
+    position: absolute;
+    top: 105px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 24px 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    z-index: 9998;
+    margin-left: 0;
+  }
+
+  .menu.active {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu {
+    top: 100px;
+  }
+
+  .menu-toggle {
+    right: 24px;
+    top: 36px;
+  }
+}
+    
   </style>
 </head>
 
