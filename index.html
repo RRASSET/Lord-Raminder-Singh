@@ -343,6 +343,11 @@ function moveSlide(id, dir) {
   const total = slider.children.length / 2;
   const cardWidth = 295;
 
+  function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
+}
+
   sliders[id] += dir;
 
   slider.style.transition = "transform 0.4s ease";
