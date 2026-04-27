@@ -11,8 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -57,6 +62,8 @@
       align-items: center;
       padding: 0 105px;
       border-bottom: 2px solid #111;
+      position: relative;
+      z-index: 50;
     }
 
     .brand {
@@ -96,14 +103,25 @@
       text-transform: uppercase;
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #111;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
     .hero {
       width: 100%;
-      height: 675px;
-      background-image: url("businessbanner.jpg");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: #333;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .intro-section,
@@ -227,12 +245,14 @@
 
     .business-banner-two {
       width: 100%;
-      height: 575px;
-      background-image: url("businessbannerone.png");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: #000;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .business-banner-two img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .philanthropy {
@@ -325,30 +345,69 @@
       text-transform: uppercase;
     }
 
-    @media screen and (max-width: 900px) {
-      .top-bar,
-      .navbar {
-        padding-left: 25px;
-        padding-right: 25px;
+    @media screen and (max-width: 1024px) {
+      .top-bar {
+        padding: 0 25px;
+        justify-content: center;
+      }
+
+      .socials a {
+        margin: 0 12px;
       }
 
       .navbar {
-        height: auto;
-        padding-top: 18px;
-        padding-bottom: 18px;
-        flex-direction: column;
-        gap: 15px;
+        height: 105px;
+        padding: 0 28px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        width: auto;
+        align-items: center;
+      }
+
+      .logo {
+        width: 70px;
+        margin: 0 auto;
+      }
+
+      .brand span {
+        font-size: 11px;
+        margin-top: 4px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 28px;
+        top: 38px;
+        z-index: 9999;
       }
 
       .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 18px;
+        display: none;
+        position: absolute;
+        top: 105px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 24px 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        z-index: 9998;
         margin-left: 0;
       }
 
-      .hero {
-        height: 520px;
+      .menu.active {
+        display: flex;
+      }
+
+      .menu a {
+        font-size: 15px;
       }
 
       .intro-section,
@@ -388,10 +447,6 @@
         padding: 0;
       }
 
-      .business-banner-two {
-        height: 420px;
-      }
-
       .footer-bottom {
         flex-direction: column;
         gap: 8px;
@@ -400,34 +455,27 @@
       }
     }
 
-    @media screen and (max-width: 560px) {
-      .top-bar {
-        padding: 0 20px;
-      }
-
-      .socials a {
-        margin-left: 18px;
-        font-size: 15px;
+    @media screen and (max-width: 600px) {
+      .navbar {
+        height: 100px;
+        padding: 0 24px;
       }
 
       .logo {
-        width: 72px;
+        width: 58px;
       }
 
-      .menu {
-        gap: 14px;
-      }
-
-      .menu a {
+      .brand span {
         font-size: 10px;
       }
 
-      .hero {
-        height: 330px;
+      .menu-toggle {
+        right: 24px;
+        top: 36px;
       }
 
-      .business-banner-two {
-        height: 290px;
+      .menu {
+        top: 100px;
       }
 
       .section-title {
@@ -442,123 +490,142 @@
 </head>
 
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="socials">
+
+<header>
+  <div class="top-bar">
+    <div class="socials">
+      <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="logo.png" class="logo" alt="Lord Rami Ranger FRSA Logo">
+      <span>LORD RAMI RANGER FRSA</span>
+    </a>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="philanthropy.html">Philanthropy</a>
+      <a href="business.html">Business</a>
+      <a href="books.html">Books</a>
+      <a href="recognition.html">Recognition</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" aria-label="Business Leadership">
+    <img src="businessbanner.jpg" alt="Business Leadership">
+  </section>
+
+  <section class="intro-section">
+    <div class="intro-image">
+      <img src="businessone.png" alt="Business Leadership">
+    </div>
+
+    <div class="content-block">
+      <div class="eyebrow">A Legacy of Global Trade</div>
+      <h1 class="section-title">Business Leadership<br>&amp; Global Success</h1>
+      <p>
+        Lord Rami Ranger FRSA is a pioneering business leader whose remarkable achievements in international trade have set new benchmarks for British entrepreneurship. As the Chairman of Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd, Lord Rami has built two of Britain’s fastest-growing companies, making significant contributions to the British economy and establishing a global reputation for excellence in business.
+      </p>
+      <a href="#" class="btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <section class="legacy-section">
+    <div class="legacy-inner">
+      <div class="legacy-copy">
+        <div class="eyebrow">Excellence in International Trade</div>
+        <h2 class="section-title">Sun Mark Ltd: A Legacy<br>of Global Trade</h2>
+        <p>
+          Founded by Lord Rami Ranger, Sun Mark Ltd is a globally renowned FMCG Fast Moving Consumer Goods company that exports British products to over 130 countries. With a business model rooted in innovation, efficiency, and quality, Sun Mark Ltd has become a symbol of British excellence in international trade.
+        </p>
+        <p>
+          Sun Mark Ltd holds a unique place in British business history as the only company to have won five consecutive Queen’s Awards for Enterprise in International Trade from 2009 to 2013—a record that remains unmatched to this day.
+        </p>
+      </div>
+
+      <div class="legacy-image">
+        <img src="businesstwo.png" alt="Sun Mark Ltd">
+      </div>
+    </div>
+  </section>
+
+  <section class="sea-section">
+    <div class="sea-image">
+      <img src="businessthree.png" alt="Sea Air and Land Forwarding">
+    </div>
+
+    <div class="content-block">
+      <div class="eyebrow">Sea, Air &amp; Land Forwarding Ltd</div>
+      <h2 class="section-title">Sea, Air &amp; Land<br>Forwarding Ltd</h2>
+      <p>
+        Sea, Air &amp; Land Forwarding Ltd provides end-to-end supply chain solutions, including freight forwarding, warehousing, and distribution services. By offering customized logistics support, the company enables businesses to access new markets, streamline operations, and enhance their international presence.
+      </p>
+      <p>
+        With a strong focus on efficiency and customer satisfaction, Sea, Air &amp; Land Forwarding Ltd plays a critical role in facilitating global trade.
+      </p>
+    </div>
+  </section>
+
+  <section class="business-banner-two" aria-label="Business banner">
+    <img src="businessbannerone.png" alt="Business Banner">
+  </section>
+
+  <section class="philanthropy">
+    <div class="philanthropy-inner">
+      <div class="eyebrow">Philanthropy</div>
+      <h2 class="section-title">Innovating For<br>The Future</h2>
+      <p>
+        Under Lord Rami’s leadership, both Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd continue to innovate and grow, adapting to the demands of an ever-changing global marketplace. By leveraging cutting-edge technology, fostering strategic partnerships, and maintaining a relentless focus on quality, Lord Rami ensures that his companies remain at the forefront of international trade.
+      </p>
+      <span class="learn-mini">Learn more about Lord Rami’s global impact and philanthropic initiatives</span>
+      <a href="#" class="learn-link">Learn More</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <section class="footer-main">
+    <div>
+      <img src="logo.png" class="footer-logo-img" alt="Lord Rami Ranger FRSA Logo">
+      <h2 class="footer-title">Lord Rami Ranger FRSA</h2>
+
+      <address class="footer-address">
+        Sun House, 428 Long Drive<br>
+        Greenford, UB6 8UH<br>
+        Tel: +44 (0) 20 8575 3700
+      </address>
+
+      <div class="footer-socials">
         <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
     </div>
+  </section>
 
-    <nav class="navbar">
-      <a href="index.html" class="brand">
-        <img src="logo.png" class="logo" alt="Lord Rami Ranger FRSA Logo">
-        <span>LORD RAMI RANGER FRSA</span>
-      </a>
+  <section class="footer-bottom">
+    <div>© 2026 All Rights Reserved | Lord Rami Ranger FRSA</div>
+    <a href="#">Privacy Policy &amp; Terms</a>
+  </section>
+</footer>
 
-      <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="philanthropy.html">Philanthropy</a>
-        <a href="business.html">Business</a>
-        <a href="books.html">Books</a>
-        <a href="recognition.html">Recognition</a>
-      </div>
-    </nav>
-  </header>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("active");
+  }
+</script>
 
-  <main>
-    <section class="hero" aria-label="Business Leadership"></section>
-
-    <section class="intro-section">
-      <div class="intro-image">
-        <img src="businessone.png" alt="Business Leadership">
-      </div>
-
-      <div class="content-block">
-        <div class="eyebrow">A Legacy of Global Trade</div>
-        <h1 class="section-title">Business Leadership<br>&amp; Global Success</h1>
-        <p>
-          Lord Rami Ranger FRSA is a pioneering business leader whose remarkable achievements in international trade have set new benchmarks for British entrepreneurship. As the Chairman of Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd, Lord Rami has built two of Britain’s fastest-growing companies, making significant contributions to the British economy and establishing a global reputation for excellence in business.
-        </p>
-        <a href="#" class="btn-outline">Learn More</a>
-      </div>
-    </section>
-
-    <section class="legacy-section">
-      <div class="legacy-inner">
-        <div class="legacy-copy">
-          <div class="eyebrow">Excellence in International Trade</div>
-          <h2 class="section-title">Sun Mark Ltd: A Legacy<br>of Global Trade</h2>
-          <p>
-            Founded by Lord Rami Ranger, Sun Mark Ltd is a globally renowned FMCG Fast Moving Consumer Goods company that exports British products to over 130 countries. With a business model rooted in innovation, efficiency, and quality, Sun Mark Ltd has become a symbol of British excellence in international trade.
-          </p>
-          <p>
-            Sun Mark Ltd holds a unique place in British business history as the only company to have won five consecutive Queen’s Awards for Enterprise in International Trade from 2009 to 2013—a record that remains unmatched to this day.
-          </p>
-        </div>
-
-        <div class="legacy-image">
-          <img src="businesstwo.png" alt="Sun Mark Ltd">
-        </div>
-      </div>
-    </section>
-
-    <section class="sea-section">
-      <div class="sea-image">
-        <img src="businessthree.png" alt="Sea Air and Land Forwarding">
-      </div>
-
-      <div class="content-block">
-        <div class="eyebrow">Sea, Air &amp; Land Forwarding Ltd</div>
-        <h2 class="section-title">Sea, Air &amp; Land<br>Forwarding Ltd</h2>
-        <p>
-          Sea, Air &amp; Land Forwarding Ltd provides end-to-end supply chain solutions, including freight forwarding, warehousing, and distribution services. By offering customized logistics support, the company enables businesses to access new markets, streamline operations, and enhance their international presence.
-        </p>
-        <p>
-          With a strong focus on efficiency and customer satisfaction, Sea, Air &amp; Land Forwarding Ltd plays a critical role in facilitating global trade.
-        </p>
-      </div>
-    </section>
-
-    <section class="business-banner-two" aria-label="Business banner"></section>
-
-    <section class="philanthropy">
-      <div class="philanthropy-inner">
-        <div class="eyebrow">Philanthropy</div>
-        <h2 class="section-title">Innovating For<br>The Future</h2>
-        <p>
-          Under Lord Rami’s leadership, both Sun Mark Ltd and Sea, Air &amp; Land Forwarding Ltd continue to innovate and grow, adapting to the demands of an ever-changing global marketplace. By leveraging cutting-edge technology, fostering strategic partnerships, and maintaining a relentless focus on quality, Lord Rami ensures that his companies remain at the forefront of international trade.
-        </p>
-        <span class="learn-mini">Learn more about Lord Rami’s global impact and philanthropic initiatives</span>
-        <a href="#" class="learn-link">Learn More</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <section class="footer-main">
-      <div>
-        <img src="logo.png" class="footer-logo-img" alt="Lord Rami Ranger FRSA Logo">
-        <h2 class="footer-title">Lord Rami Ranger FRSA</h2>
-
-        <address class="footer-address">
-          Sun House, 428 Long Drive<br>
-          Greenford, UB6 8UH<br>
-          Tel: +44 (0) 20 8575 3700
-        </address>
-
-        <div class="footer-socials">
-          <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="footer-bottom">
-      <div>© 2026 All Rights Reserved | Lord Rami Ranger FRSA</div>
-      <a href="#">Privacy Policy &amp; Terms</a>
-    </section>
-  </footer>
 </body>
 </html>
