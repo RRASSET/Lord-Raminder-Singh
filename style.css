@@ -808,3 +808,14 @@ footer p {
   letter-spacing: 1px !important;
   padding-bottom: 8px !important;
 }
+
+
+/* FINAL TOP SOCIAL ICON FIX */
+.top-bar .socials a i {
+  font-size: 30px !important;
+  line-height: 1 !important;
+}
+
+.top-bar {
+  height: 48px !important;
+}
