@@ -788,3 +788,23 @@ footer p {
     line-height: 1.5;
   }
 }
+
+
+
+/* FINAL NAV FIX */
+
+.logo {
+  width: 115px !important;
+  height: auto;
+}
+
+.menu {
+  gap: 34px !important;
+}
+
+.menu a {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  padding-bottom: 8px !important;
+}
