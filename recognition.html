@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -40,9 +39,6 @@
       text-decoration: none;
     }
 
-
-  
-
     .top-bar {
       height: 34px;
       background: #6d9ca1;
@@ -66,6 +62,8 @@
       align-items: center;
       padding: 0 105px;
       border-bottom: 1px solid #111;
+      position: relative;
+      z-index: 50;
     }
 
     .brand {
@@ -88,7 +86,6 @@
       font-weight: 700;
       letter-spacing: 0.2px;
       white-space: nowrap;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .menu {
@@ -104,7 +101,15 @@
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
-      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #111;
+      font-size: 28px;
+      cursor: pointer;
     }
 
     .hero {
@@ -128,7 +133,6 @@
       font-weight: 900;
       text-transform: uppercase;
       margin-bottom: 10px;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .intro h1 {
@@ -137,7 +141,6 @@
       line-height: 1.05;
       font-weight: 900;
       text-transform: uppercase;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .intro p {
@@ -146,7 +149,6 @@
       font-size: 13px;
       line-height: 1.35;
       font-weight: 500;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .awards-grid {
@@ -162,7 +164,6 @@
 
     .award-card {
       text-align: left;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .award-icon {
@@ -185,7 +186,6 @@
       line-height: 1.25;
       font-weight: 900;
       margin: 0 0 5px;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .award-card p {
@@ -193,7 +193,6 @@
       line-height: 1.35;
       font-weight: 500;
       margin: 0;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .quote-section {
@@ -239,14 +238,12 @@
       font-weight: 400;
       margin: 0 0 45px;
       letter-spacing: -1px;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .quote-author {
       font-size: 28px;
       font-weight: 900;
       text-transform: uppercase;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .quote-dot {
@@ -287,7 +284,6 @@
       font-weight: 900;
       text-transform: uppercase;
       margin: 0 0 18px;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .footer-address {
@@ -297,7 +293,6 @@
       line-height: 1.4;
       margin: 0 0 18px;
       font-style: normal;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
     .footer-socials {
@@ -317,29 +312,71 @@
       font-size: 10px;
       font-weight: 500;
       text-transform: uppercase;
-      font-family: 'Nunito Sans', sans-serif;
     }
 
-    @media screen and (max-width: 900px) {
-      .top-bar,
-      .navbar {
-        padding-left: 25px;
-        padding-right: 25px;
+    @media screen and (max-width: 1024px) {
+      .top-bar {
+        padding: 0 25px;
+        justify-content: center;
+      }
+
+      .socials a {
+        margin: 0 12px;
       }
 
       .navbar {
-        height: auto;
-        flex-direction: column;
-        gap: 15px;
-        padding-top: 18px;
-        padding-bottom: 18px;
+        height: 105px;
+        padding: 0 28px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        width: auto;
+        align-items: center;
+      }
+
+      .logo {
+        width: 70px;
+        margin: 0 auto;
+      }
+
+      .brand span {
+        font-size: 11px;
+        margin-top: 4px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 28px;
+        top: 38px;
+        z-index: 9999;
       }
 
       .menu {
+        display: none;
+        position: absolute;
+        top: 105px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 24px 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        z-index: 9998;
         margin-left: 0;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 18px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu a {
+        font-size: 15px;
       }
 
       .hero {
@@ -365,29 +402,26 @@
     }
 
     @media screen and (max-width: 560px) {
-      .wix-strip {
-        display: none;
-      }
-
-      .top-bar {
-        padding: 0 20px;
-      }
-
-      .socials a {
-        margin-left: 18px;
-        font-size: 15px;
+      .navbar {
+        height: 100px;
+        padding: 0 24px;
       }
 
       .logo {
-        width: 72px;
+        width: 58px;
+      }
+
+      .brand span {
+        font-size: 10px;
+      }
+
+      .menu-toggle {
+        right: 24px;
+        top: 36px;
       }
 
       .menu {
-        gap: 14px;
-      }
-
-      .menu a {
-        font-size: 10px;
+        top: 100px;
       }
 
       .hero {
@@ -425,12 +459,6 @@
 
 <body>
 
-  <div class="wix-strip">
-    <strong>WIX</strong>
-    <span>This website was built on Wix. Create yours today.</span>
-    <a href="#">Get Started</a>
-  </div>
-
   <header>
     <div class="top-bar">
       <div class="socials">
@@ -445,7 +473,11 @@
         <span>LORD RAMI RANGER FRSA</span>
       </a>
 
-      <div class="menu">
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="philanthropy.html">Philanthropy</a>
@@ -560,6 +592,13 @@
       <a href="#">Privacy Policy &amp; Terms</a>
     </section>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
