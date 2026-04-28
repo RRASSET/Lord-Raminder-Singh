@@ -819,3 +819,60 @@ footer p {
 .top-bar {
   height: 48px !important;
 }
+
+
+/* FINAL COLOUR + MENU + TEXT FIXES */
+
+:root {
+  --bella-blue: #B1D2E4;
+  --teal-blue: #6d9ca1;
+}
+
+/* Keep underline permanently under Home */
+.menu a {
+  position: relative;
+}
+
+.menu a[href="index.html"] {
+  color: var(--teal-blue) !important;
+}
+
+.menu a[href="index.html"]::after {
+  width: 100% !important;
+}
+
+/* Keep hover underline for other menu items */
+.menu a:hover {
+  color: var(--teal-blue) !important;
+}
+
+.menu a:hover::after {
+  width: 100% !important;
+}
+
+/* Make all H3 headings BELLA blue */
+.content-text h3 {
+  color: var(--bella-blue) !important;
+}
+
+/* Keep quote name white */
+.quote-strip h3 {
+  color: white !important;
+}
+
+/* Fix small text size everywhere */
+.card p,
+.charity-card p,
+.news-text p {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 767px) {
+  .card p,
+  .charity-card p,
+  .news-text p {
+    font-size: 15px !important;
+  }
+}
