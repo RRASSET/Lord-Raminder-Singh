@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-blue: #6d9ca1;
+  --light-bg: #f9f9f9;
+  --black: #111;
+  --white: #fff;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,22 +22,27 @@ body {
   color: #111;
 }
 
+/* TOP BAR */
 
 .top-bar {
-  height: 34px;
-  background: #6d9ca1;
+  height: 48px;
+  background: var(--main-blue);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 105px;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .socials a {
   color: white;
   text-decoration: none;
   margin-left: 24px;
-  font-size: 26px;
+  font-size: 30px;
 }
+
+/* NAVBAR */
 
 .navbar {
   width: 100%;
@@ -40,8 +52,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 105px;
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 9998;
+  transition: all 0.3s ease;
 }
 
 .brand {
@@ -58,11 +72,12 @@ body {
   width: 82px;
   height: auto;
   display: block;
+  filter: none;
 }
 
 .brand span {
   margin-top: 6px;
-  color: #6d9ca1;
+  color: var(--main-blue);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.4px;
@@ -71,16 +86,43 @@ body {
 
 .menu {
   display: flex;
-  gap: 46px;
+  gap: 34px;
   align-items: center;
 }
 
 .menu a {
-  color: #000;
+  position: relative;
+  color: #111;
   text-decoration: none;
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  padding-bottom: 8px;
+  transition: color 0.25s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--main-blue);
+  transition: width 0.25s ease;
+}
+
+.menu a:hover,
+.menu a.active,
+.menu a[href="index.html"] {
+  color: var(--main-blue);
+}
+
+.menu a:hover::after,
+.menu a.active::after,
+.menu a[href="index.html"]::after {
+  width: 100%;
 }
 
 .menu-toggle {
@@ -90,6 +132,36 @@ body {
   color: #111;
   font-size: 24px;
   cursor: pointer;
+}
+
+/* SCROLLED HEADER */
+
+body.scrolled .top-bar {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body.scrolled .navbar {
+  background: var(--main-blue);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+}
+
+body.scrolled .navbar .brand span,
+body.scrolled .navbar .menu a,
+body.scrolled .navbar .menu a.active,
+body.scrolled .navbar .menu a[href="index.html"] {
+  color: white;
+}
+
+body.scrolled .navbar .menu a::after {
+  background: white;
+}
+
+body.scrolled .navbar .logo {
+  filter: brightness(0) invert(1);
 }
 
 /* HERO */
@@ -144,17 +216,28 @@ body {
 .buttons a {
   display: inline-block;
   margin: 34px 14px 0;
-  padding: 17px 58px;
+  padding: 20px 70px;
   border: 1px solid white;
   color: white;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.buttons a:hover {
+  background: white;
+  color: #111;
 }
 
 .buttons .white {
   background: white;
   color: #111;
+}
+
+.buttons .white:hover {
+  background: transparent;
+  color: white;
 }
 
 /* CONTENT SECTIONS */
@@ -178,29 +261,32 @@ body {
 }
 
 .content-text {
-  max-width: 440px;
+  max-width: 650px;
 }
 
 .content-text h2 {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 800;
   margin: 0 0 8px;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .content-text h3 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0 0 28px;
   text-transform: uppercase;
   line-height: 1.3;
+  letter-spacing: 0.5px;
+  color: var(--main-blue);
 }
 
 .content-text p {
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 18px;
+  line-height: 1.65;
   font-weight: 400;
   margin: 0 0 16px;
   color: #111;
@@ -224,11 +310,12 @@ body {
   color: white;
 }
 
-/* AWARDS */
+/* AWARDS + CHARITIES */
 
-.awards {
+.awards,
+.charities-section {
   width: 100%;
-  background: #6d9ca1;
+  background: var(--main-blue);
   color: white;
   text-align: center;
   padding: 60px 100px 70px;
@@ -236,7 +323,8 @@ body {
   overflow: hidden;
 }
 
-.awards h2 {
+.awards h2,
+.charities-section h2 {
   font-size: 30px;
   margin: 0 0 42px;
 }
@@ -261,10 +349,16 @@ body {
   object-fit: cover;
 }
 
-.card p {
-  font-size: 12px;
+.card p,
+.charity-card p,
+.news-text p {
+  font-size: 18px;
+  line-height: 1.65;
   margin-top: 10px;
-  line-height: 1.3;
+}
+
+.charity-card p {
+  min-height: 90px;
 }
 
 .slider-btn {
@@ -287,9 +381,11 @@ body {
   right: 28px;
 }
 
+/* QUOTE */
+
 .quote-strip {
-  background: #6d9ca1;
-  color: white;
+  background: var(--light-bg);
+  color: #111;
   text-align: center;
   padding: 80px 150px;
 }
@@ -306,7 +402,10 @@ body {
 .quote-strip h3 {
   margin-top: 20px;
   font-size: 14px;
+  color: var(--main-blue);
 }
+
+/* LATEST NEWS */
 
 .latest-news {
   padding: 60px 120px;
@@ -331,13 +430,14 @@ body {
 
 .news-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* makes it square */
-  object-fit: cover;     /* fills nicely */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
 .news-text {
-  background: #6d9ca1;
+  background: var(--main-blue);
   color: white;
   padding: 15px;
 }
@@ -347,43 +447,59 @@ body {
   margin: 0 0 5px;
 }
 
-.news-text p {
-  font-size: 11px;
-  margin: 0;
-}
+/* FOOTER */
 
-footer {
+.site-footer {
+  background: var(--light-bg);
   text-align: center;
-  padding: 70px 20px;
-  background: white;
+  padding: 70px 20px 55px;
 }
 
+.site-footer .footer-logo,
 .footer-logo {
-  width: 95px;
+  width: 120px;
+  height: auto;
+  margin-bottom: 12px;
 }
 
+.site-footer h4,
 footer h4 {
-  margin: 10px 0;
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
 }
 
+.site-footer p,
 footer p {
-  font-size: 12px;
+  margin: 0 0 20px;
+  font-size: 16px;
 }
 
-.footer-socials a {
+.site-footer p a {
   color: #111;
   text-decoration: none;
-  margin: 0 14px;
-  font-size: 23px; /* bigger icons */
-  transition: transform 0.2s ease;
+  font-size: 16px;
 }
 
-.footer-socials a:hover {
-  transform: scale(1.2); /* nice hover effect */
+.footer-socials a,
+.site-footer .footer-socials a {
+  color: #111;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 28px;
+  transition: all 0.2s ease;
+}
+
+.footer-socials a:hover,
+.site-footer .footer-socials a:hover,
+.site-footer p a:hover {
+  color: var(--main-blue);
+  transform: scale(1.15);
 }
 
 .bottom-bar {
-  background: #6d9ca1;
+  background: var(--main-blue);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -406,6 +522,15 @@ footer p {
     padding: 0 40px;
   }
 
+  .brand {
+    align-items: center;
+  }
+
+  .brand .logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .menu {
     gap: 24px;
   }
@@ -414,6 +539,30 @@ footer p {
     padding: 55px 45px;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+  }
+
+  .content-text h2 {
+    white-space: normal;
+    font-size: 30px;
+  }
+
+  .awards,
+  .charities-section {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .left {
+    left: 10px;
+  }
+
+  .right {
+    right: 10px;
+  }
+
+  .slider-btn {
+    width: 34px;
+    height: 54px;
   }
 
   .latest-news {
@@ -446,7 +595,7 @@ footer p {
   .brand {
     width: auto;
     height: auto;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .logo {
@@ -483,6 +632,15 @@ footer p {
   .menu a {
     font-size: 16px;
     width: 100%;
+    padding-bottom: 6px;
+  }
+
+  body.scrolled .navbar .menu {
+    background: var(--main-blue);
+  }
+
+  body.scrolled .navbar .menu-toggle {
+    color: white;
   }
 
   .hero {
@@ -521,7 +679,8 @@ footer p {
     margin: 0 auto;
     width: 85%;
     max-width: 310px;
-    padding: 15px 20px;
+    font-size: 14px;
+    padding: 16px 24px;
   }
 
   .content-section {
@@ -543,23 +702,26 @@ footer p {
   }
 
   .content-text h2 {
-  font-size: 25px;
-}
-
-.content-text h3 {
-  font-size: 13px;
-}
-
-.content-text p {
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-  .awards {
-    padding: 45px 20px 55px;
+    white-space: normal;
+    font-size: 28px;
   }
 
-  .awards h2 {
+  .content-text h3 {
+    font-size: 14px;
+  }
+
+  .content-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .awards,
+  .charities-section {
+    padding: 45px 42px 55px;
+  }
+
+  .awards h2,
+  .charities-section h2 {
     font-size: 24px;
   }
 
@@ -576,16 +738,23 @@ footer p {
     height: 220px;
   }
 
+  .card p,
+  .charity-card p,
+  .news-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
   .slider-btn {
     font-size: 34px;
   }
 
   .left {
-    left: 4px;
+    left: 10px;
   }
 
   .right {
-    right: 4px;
+    right: 10px;
   }
 
   .quote-strip {
@@ -609,7 +778,7 @@ footer p {
     height: 240px;
   }
 
-  footer {
+  .site-footer {
     padding: 50px 20px;
   }
 
@@ -652,463 +821,4 @@ footer p {
     width: 205px;
     height: 205px;
   }
-}
-
-
-/* FIX 1: keep logo centered on phone/tablet only */
-@media (max-width: 1024px) {
-  .brand {
-    align-items: center;
-  }
-
-  .brand .logo {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* FIX 2: give slider arrows more clickable space on phone/tablet only */
-@media (max-width: 1024px) {
-  .awards {
-    padding-left: 42px;
-    padding-right: 42px;
-  }
-
-  .left {
-    left: 10px;
-  }
-
-  .right {
-    right: 10px;
-  }
-
-  .slider-btn {
-    width: 34px;
-    height: 54px;
-  }
-}
-
-/* FIX 3: stop faces being cropped — PC + phone */
-.news-card img {
-  object-position: top center;
-}
-
-
-/* MENU STYLE UPGRADE */
-
-.menu a {
-  position: relative;
-  color: #111;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding-bottom: 10px;
-  transition: color 0.25s ease;
-}
-
-.menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: #6d9ca1;
-  transition: width 0.25s ease;
-}
-
-.menu a:hover {
-  color: #6d9ca1;
-}
-
-.menu a:hover::after {
-  width: 100%;
-}
-
-/* HERO BUTTON UPGRADE */
-
-.buttons a {
-  font-size: 16px;
-  padding: 20px 70px;
-  transition: all 0.25s ease;
-}
-
-.buttons a:hover {
-  background: white;
-  color: #111;
-}
-
-.buttons .white:hover {
-  background: transparent;
-  color: white;
-}
-
-/* TEXT NEXT TO IMAGE UPGRADE */
-
-.content-text h2 {
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.15;
-}
-
-.content-text h3 {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.content-text p {
-  font-size: 18px;
-  line-height: 1.65;
-}
-
-/* MOBILE KEEP CLEAN */
-
-@media (max-width: 767px) {
-  .menu a {
-    font-size: 16px;
-    padding-bottom: 6px;
-  }
-
-  .buttons a {
-    font-size: 14px;
-    padding: 16px 24px;
-  }
-
-  .content-text h2 {
-    font-size: 28px;
-  }
-
-  .content-text h3 {
-    font-size: 14px;
-  }
-
-  .content-text p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-}
-
-
-
-/* FINAL NAV FIX */
-
-.logo {
-  width: 82px !important;
-  height: auto;
-}
-
-.menu {
-  gap: 34px !important;
-}
-
-.menu a {
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  letter-spacing: 1px !important;
-  padding-bottom: 8px !important;
-}
-
-
-/* FINAL TOP SOCIAL ICON FIX */
-.top-bar .socials a i {
-  font-size: 30px !important;
-  line-height: 1 !important;
-}
-
-.top-bar {
-  height: 48px !important;
-}
-
-
-/* FINAL COLOUR + MENU + TEXT FIXES */
-
-:root {
-  --bella-blue: #6d9ca1;
-  --teal-blue: #6d9ca1;
-}
-
-/* Keep underline permanently under Home */
-.menu a {
-  position: relative;
-}
-
-.menu a[href="index.html"] {
-  color: var(--teal-blue) !important;
-}
-
-.menu a[href="index.html"]::after {
-  width: 100% !important;
-}
-
-/* Keep hover underline for other menu items */
-.menu a:hover {
-  color: var(--teal-blue) !important;
-}
-
-.menu a:hover::after {
-  width: 100% !important;
-}
-
-/* Make all H3 headings BELLA blue */
-.content-text h3 {
-  color: var(--bella-blue) !important;
-}
-
-/* Keep quote name white */
-.quote-strip h3 {
-  color: white !important;
-}
-
-/* Fix small text size everywhere */
-.card p,
-.charity-card p,
-.news-text p {
-  font-size: 18px !important;
-  line-height: 1.65 !important;
-}
-
-/* Mobile adjustment */
-@media (max-width: 767px) {
-  .card p,
-  .charity-card p,
-  .news-text p {
-    font-size: 15px !important;
-  }
-}
-
-
-/* FINAL FIXES - HEADER, HEADING, QUOTE, FOOTER */
-
-/* Make headings stay in one line on desktop */
-@media (min-width: 1025px) {
-  .content-text {
-    max-width: 650px !important;
-  }
-
-  .content-text h2 {
-    white-space: nowrap !important;
-    font-size: 34px !important;
-  }
-}
-
-/* Quote section light background */
-.quote-strip {
-  background: #f9f9f9 !important;
-  color: #111 !important;
-}
-
-.quote-strip h3 {
-  color: #6d9ca1 !important;
-}
-
-
-
-/* Footer style */
-.site-footer {
-  background: #f9f9f9 !important;
-  text-align: center;
-  padding: 70px 20px 55px !important;
-}
-
-.site-footer .footer-logo {
-  width: 120px !important;
-  height: auto;
-  margin-bottom: 12px;
-}
-
-.site-footer h4 {
-  margin: 0 0 18px;
-  font-size: 22px;
-  font-weight: 800;
-  color: #111;
-}
-
-.site-footer p {
-  margin: 0 0 20px;
-}
-
-.site-footer p a {
-  color: #111;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.site-footer .footer-socials a {
-  color: #111;
-  font-size: 28px;
-  margin: 0 12px;
-}
-
-.site-footer .footer-socials a:hover,
-.site-footer p a:hover {
-  color: #6d9ca1;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .content-text h2 {
-    white-space: normal !important;
-    font-size: 28px !important;
-  }
-
-  .navbar {
-    top: 48px !important;
-  }
-
-  .navbar .menu {
-    background: #6d9ca1 !important;
-  }
-
-  .navbar .menu-toggle {
-    color: white !important;
-  }
-}
-
-
-
-/* HEADER NORMAL + SCROLL FREEZE EFFECT */
-
-.top-bar {
-  transition: all 0.3s ease;
-}
-
-.navbar {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 9998 !important;
-  background: white !important;
-  transition: all 0.3s ease;
-}
-
-/* Hide top social bar after scroll */
-body.scrolled .top-bar {
-  height: 0 !important;
-  overflow: hidden;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Header becomes blue only after scroll */
-body.scrolled .navbar {
-  background: #6d9ca1 !important;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.12);
-}
-
-/* Text becomes white only after scroll */
-body.scrolled .navbar .brand span,
-body.scrolled .navbar .menu a,
-body.scrolled .navbar .menu a.active {
-  color: white !important;
-}
-
-body.scrolled .navbar .menu a::after {
-  background: white !important;
-}
-
-body.scrolled .navbar .menu a:hover {
-  color: white !important;
-}
-
-body.scrolled .navbar .logo {
-  filter: brightness(0) invert(1);
-}
-
-/* Normal state logo stays original */
-.navbar .logo {
-  filter: none;
-}
-
-/* Mobile menu after scroll */
-@media (max-width: 767px) {
-  body.scrolled .navbar .menu {
-    background: #6d9ca1 !important;
-  }
-
-  body.scrolled .navbar .menu-toggle {
-    color: white !important;
-  }
-}
-
-
-/* FIX NORMAL HEADER BEFORE SCROLL */
-
-body:not(.scrolled) .navbar {
-  background: white !important;
-}
-
-body:not(.scrolled) .navbar .brand span {
-  color: #6d9ca1 !important;
-}
-
-body:not(.scrolled) .navbar .menu a {
-  color: #111 !important;
-}
-
-body:not(.scrolled) .navbar .menu a.active,
-body:not(.scrolled) .navbar .menu a[href="index.html"] {
-  color: #6d9ca1 !important;
-}
-
-body:not(.scrolled) .navbar .menu a::after {
-  background: #6d9ca1 !important;
-}
-
-body:not(.scrolled) .navbar .logo {
-  filter: none !important;
-}
-
-/* Top icons show only before scroll */
-body:not(.scrolled) .top-bar {
-  height: 48px !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Top icons hidden after scroll */
-body.scrolled .top-bar {
-  height: 0 !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  padding: 0 105px !important;
-}
-
-/* Header after scroll */
-body.scrolled .navbar {
-  background: #6d9ca1 !important;
-}
-
-body.scrolled .navbar .brand span,
-body.scrolled .navbar .menu a,
-body.scrolled .navbar .menu a.active,
-body.scrolled .navbar .menu a[href="index.html"] {
-  color: white !important;
-}
-
-body.scrolled .navbar .menu a::after {
-  background: white !important;
-}
-
-body.scrolled .navbar .logo {
-  filter: brightness(0) invert(1) !important;
-}
-
-/* MATCH HEIGHT + SPACING FOR BOTH SLIDER SECTIONS */
-
-.awards,
-.charities-section {
-  padding-top: 60px !important;
-  padding-bottom: 70px !important;
-}
-
-/* Ensure cards don't stretch section unevenly */
-.charity-card p {
-  min-height: 90px;
-}
-
-/* Optional: make both sections visually identical */
-.charities-section {
-  background: #6d9ca1 !important;
-  color: white;
 }
