@@ -903,39 +903,7 @@ footer p {
   color: #6d9ca1 !important;
 }
 
-/* Freeze header while scrolling */
-.top-bar {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 9999 !important;
-}
 
-.navbar {
-  position: sticky !important;
-  top: 48px !important;
-  z-index: 9998 !important;
-  background: #6d9ca1 !important;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.12);
-}
-
-/* Header colour when sticky */
-.navbar .brand span,
-.navbar .menu a,
-.navbar .menu a.active {
-  color: white !important;
-}
-
-.navbar .menu a::after {
-  background: white !important;
-}
-
-.navbar .menu a:hover {
-  color: white !important;
-}
-
-.navbar .logo {
-  filter: brightness(0) invert(1);
-}
 
 /* Footer style */
 .site-footer {
@@ -994,6 +962,71 @@ footer p {
   }
 
   .navbar .menu-toggle {
+    color: white !important;
+  }
+}
+
+
+
+/* HEADER NORMAL + SCROLL FREEZE EFFECT */
+
+.top-bar {
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9998 !important;
+  background: white !important;
+  transition: all 0.3s ease;
+}
+
+/* Hide top social bar after scroll */
+body.scrolled .top-bar {
+  height: 0 !important;
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Header becomes blue only after scroll */
+body.scrolled .navbar {
+  background: #6d9ca1 !important;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+}
+
+/* Text becomes white only after scroll */
+body.scrolled .navbar .brand span,
+body.scrolled .navbar .menu a,
+body.scrolled .navbar .menu a.active {
+  color: white !important;
+}
+
+body.scrolled .navbar .menu a::after {
+  background: white !important;
+}
+
+body.scrolled .navbar .menu a:hover {
+  color: white !important;
+}
+
+body.scrolled .navbar .logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Normal state logo stays original */
+.navbar .logo {
+  filter: none;
+}
+
+/* Mobile menu after scroll */
+@media (max-width: 767px) {
+  body.scrolled .navbar .menu {
+    background: #6d9ca1 !important;
+  }
+
+  body.scrolled .navbar .menu-toggle {
     color: white !important;
   }
 }
