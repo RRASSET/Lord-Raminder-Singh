@@ -1093,3 +1093,22 @@ body.scrolled .navbar .menu a::after {
 body.scrolled .navbar .logo {
   filter: brightness(0) invert(1) !important;
 }
+
+/* MATCH HEIGHT + SPACING FOR BOTH SLIDER SECTIONS */
+
+.awards,
+.charities-section {
+  padding-top: 60px !important;
+  padding-bottom: 70px !important;
+}
+
+/* Ensure cards don't stretch section unevenly */
+.charity-card p {
+  min-height: 90px;
+}
+
+/* Optional: make both sections visually identical */
+.charities-section {
+  background: #6d9ca1 !important;
+  color: white;
+}
