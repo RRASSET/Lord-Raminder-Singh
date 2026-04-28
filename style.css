@@ -825,7 +825,7 @@ footer p {
 /* FINAL COLOUR + MENU + TEXT FIXES */
 
 :root {
-  --bella-blue: #B1D2E4;
+  --bella-blue: #6d9ca1;
   --teal-blue: #6d9ca1;
 }
 
@@ -875,5 +875,125 @@ footer p {
   .charity-card p,
   .news-text p {
     font-size: 15px !important;
+  }
+}
+
+
+/* FINAL FIXES - HEADER, HEADING, QUOTE, FOOTER */
+
+/* Make headings stay in one line on desktop */
+@media (min-width: 1025px) {
+  .content-text {
+    max-width: 650px !important;
+  }
+
+  .content-text h2 {
+    white-space: nowrap !important;
+    font-size: 34px !important;
+  }
+}
+
+/* Quote section light background */
+.quote-strip {
+  background: #f9f9f9 !important;
+  color: #111 !important;
+}
+
+.quote-strip h3 {
+  color: #6d9ca1 !important;
+}
+
+/* Freeze header while scrolling */
+.top-bar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+}
+
+.navbar {
+  position: sticky !important;
+  top: 48px !important;
+  z-index: 9998 !important;
+  background: #6d9ca1 !important;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+}
+
+/* Header colour when sticky */
+.navbar .brand span,
+.navbar .menu a,
+.navbar .menu a.active {
+  color: white !important;
+}
+
+.navbar .menu a::after {
+  background: white !important;
+}
+
+.navbar .menu a:hover {
+  color: white !important;
+}
+
+.navbar .logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Footer style */
+.site-footer {
+  background: #f9f9f9 !important;
+  text-align: center;
+  padding: 70px 20px 55px !important;
+}
+
+.site-footer .footer-logo {
+  width: 120px !important;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.site-footer h4 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+}
+
+.site-footer p {
+  margin: 0 0 20px;
+}
+
+.site-footer p a {
+  color: #111;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.site-footer .footer-socials a {
+  color: #111;
+  font-size: 28px;
+  margin: 0 12px;
+}
+
+.site-footer .footer-socials a:hover,
+.site-footer p a:hover {
+  color: #6d9ca1;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .content-text h2 {
+    white-space: normal !important;
+    font-size: 28px !important;
+  }
+
+  .navbar {
+    top: 48px !important;
+  }
+
+  .navbar .menu {
+    background: #6d9ca1 !important;
+  }
+
+  .navbar .menu-toggle {
+    color: white !important;
   }
 }
