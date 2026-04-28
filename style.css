@@ -1030,3 +1030,66 @@ body.scrolled .navbar .logo {
     color: white !important;
   }
 }
+
+
+/* FIX NORMAL HEADER BEFORE SCROLL */
+
+body:not(.scrolled) .navbar {
+  background: white !important;
+}
+
+body:not(.scrolled) .navbar .brand span {
+  color: #6d9ca1 !important;
+}
+
+body:not(.scrolled) .navbar .menu a {
+  color: #111 !important;
+}
+
+body:not(.scrolled) .navbar .menu a.active,
+body:not(.scrolled) .navbar .menu a[href="index.html"] {
+  color: #6d9ca1 !important;
+}
+
+body:not(.scrolled) .navbar .menu a::after {
+  background: #6d9ca1 !important;
+}
+
+body:not(.scrolled) .navbar .logo {
+  filter: none !important;
+}
+
+/* Top icons show only before scroll */
+body:not(.scrolled) .top-bar {
+  height: 48px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Top icons hidden after scroll */
+body.scrolled .top-bar {
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  padding: 0 105px !important;
+}
+
+/* Header after scroll */
+body.scrolled .navbar {
+  background: #6d9ca1 !important;
+}
+
+body.scrolled .navbar .brand span,
+body.scrolled .navbar .menu a,
+body.scrolled .navbar .menu a.active,
+body.scrolled .navbar .menu a[href="index.html"] {
+  color: white !important;
+}
+
+body.scrolled .navbar .menu a::after {
+  background: white !important;
+}
+
+body.scrolled .navbar .logo {
+  filter: brightness(0) invert(1) !important;
+}
