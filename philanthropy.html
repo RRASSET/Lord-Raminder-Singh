@@ -294,33 +294,51 @@ body.scrolled .navbar .logo {
       font-size: 15px;
     }
 
-    footer {
-      background: #f7f7f7;
-      text-align: center;
-      padding: 60px 20px;
-    }
+    .site-footer {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 70px 20px 55px;
+}
 
-    .footer-logo {
-      width: 95px;
-      height: auto;
-      margin: 0 auto 10px;
-    }
+.site-footer .footer-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
 
-    footer h4 {
-      font-size: 14px;
-    }
+.site-footer h4 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+}
 
-    footer p {
-      font-size: 11px;
-      line-height: 1.4;
-    }
+.site-footer p {
+  margin: 0 0 20px;
+  font-size: 16px;
+}
 
-    .footer-socials a {
-      margin: 0 8px;
-      font-size: 17px;
-      color: black;
-    }
+.site-footer p a {
+  color: #111;
+  text-decoration: none;
+  font-size: 16px;
+}
 
+.site-footer .footer-socials a {
+  color: #111;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 28px;
+  transition: all 0.2s ease;
+}
+
+.site-footer .footer-socials a:hover,
+.site-footer p a:hover {
+  color: var(--main-blue);
+  transform: scale(1.15);
+}
     .bottom-bar {
       background: #6d9ca1;
       color: white;
@@ -481,9 +499,9 @@ body.scrolled .navbar .logo {
         font-size: 13px;
       }
 
-      footer {
-        padding: 55px 20px 45px;
-      }
+      .site-footer {
+  padding: 50px 20px;
+}
     }
 
     @media screen and (max-width: 420px) {
@@ -642,17 +660,21 @@ body.scrolled .navbar .logo {
   <h3>- LORD RAMI RANGER FRSA</h3>
 </section>
 
-<footer>
+<footer class="site-footer">
   <img src="logo.png" class="footer-logo" alt="Lord Rami Ranger FRSA Logo">
+
   <h4>LORD RAMI RANGER FRSA</h4>
+
   <p>
-    SUN HOUSE, 428 LONG DRIVE<br>
-    GREENFORD, UB6 8UH
+    <a href="mailto:info@ramiranger.co.uk">info@ramiranger.co.uk</a>
   </p>
 
   <div class="footer-socials">
-    <a href="https://www.youtube.com/@lordramiranger" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-    <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank">
+    <a href="https://www.youtube.com/@lordramiranger" target="_blank" aria-label="YouTube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn">
       <i class="fa-brands fa-linkedin-in"></i>
     </a>
   </div>
