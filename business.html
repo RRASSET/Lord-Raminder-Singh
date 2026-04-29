@@ -371,55 +371,64 @@ body.scrolled .navbar .logo {
       text-transform: uppercase;
     }
 
-    .footer-main {
-      min-height: 365px;
-      background: #f7f7f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px 50px;
-    }
+    .site-footer {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 70px 20px 55px;
+}
 
-    .footer-logo-img {
-      width: 95px;
-      margin: 0 auto 10px;
-    }
+.site-footer .footer-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
 
-    .footer-title {
-      font-size: 14px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin: 0 0 18px;
-    }
+.site-footer h4 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+}
 
-    .footer-address {
-      font-size: 11px;
-      font-weight: 500;
-      text-transform: uppercase;
-      line-height: 1.4;
-      margin: 0 0 18px;
-      font-style: normal;
-    }
+.site-footer p {
+  margin: 0 0 20px;
+  font-size: 16px;
+}
 
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      font-size: 17px;
-    }
+.site-footer p a {
+  color: #111;
+  text-decoration: none;
+  font-size: 16px;
+}
 
-    .footer-bottom {
-      background: #6d9ca1;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 13px 80px;
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
+.site-footer .footer-socials a {
+  color: #111;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 28px;
+  transition: all 0.2s ease;
+}
+
+.site-footer .footer-socials a:hover,
+.site-footer p a:hover {
+  color: var(--main-blue);
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  background: var(--main-blue);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 80px;
+  font-size: 11px;
+}
+
+.footer-bottom a {
+  color: white;
+}
 
     @media screen and (max-width: 1024px) {
       .top-bar {
@@ -701,27 +710,29 @@ body.scrolled .navbar .logo {
 </main>
 
 <footer>
-  <section class="footer-main">
-    <div>
-      <img src="logo.png" class="footer-logo-img" alt="Lord Rami Ranger FRSA Logo">
-      <h2 class="footer-title">Lord Rami Ranger FRSA</h2>
+  <section class="site-footer">
+    <img src="logo.png" class="footer-logo" alt="Lord Rami Ranger FRSA Logo">
 
-      <address class="footer-address">
-        Sun House, 428 Long Drive<br>
-        Greenford, UB6 8UH<br>
-        Tel: +44 (0) 20 8575 3700
-      </address>
+    <h4>LORD RAMI RANGER FRSA</h4>
 
-      <div class="footer-socials">
-        <a href="https://www.youtube.com/@lordramiranger" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
+    <p>
+      <a href="mailto:info@ramiranger.co.uk">info@ramiranger.co.uk</a>
+    </p>
+
+    <div class="footer-socials">
+      <a href="https://www.youtube.com/@lordramiranger" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/lord-rami-ranger-frsa-37abb4119/" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
     </div>
   </section>
 
   <section class="footer-bottom">
-    <div>© 2026 All Rights Reserved | Lord Rami Ranger FRSA</div>
-    <a href="#">Privacy Policy &amp; Terms</a>
+    <div>© 2024 All Rights Reserved | LORD RAMI RANGER FRSA</div>
+    <a href="#">PRIVACY POLICY &amp; TERMS</a>
   </section>
 </footer>
 
