@@ -337,32 +337,29 @@ body.scrolled .navbar .logo {
       object-fit: contain;
     }
 
-   /* FOOTER */
+/* FOOTER */
 
 .site-footer {
-  background: var(--light-bg);
+  background: #f9f9f9;
   text-align: center;
   padding: 70px 20px 55px;
 }
 
-.site-footer .footer-logo,
-.footer-logo {
+.site-footer .footer-logo {
   width: 120px;
   height: auto;
   margin: 0 auto 12px;
   object-fit: contain;
 }
 
-.site-footer h4,
-footer h4 {
+.site-footer h4 {
   margin: 0 0 18px;
   font-size: 22px;
   font-weight: 800;
   color: #111;
 }
 
-.site-footer p,
-footer p {
+.site-footer p {
   margin: 0 0 20px;
   font-size: 16px;
 }
@@ -373,13 +370,31 @@ footer p {
   font-size: 16px;
 }
 
-.footer-socials a,
 .site-footer .footer-socials a {
   color: #111;
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 10px;
   font-size: 28px;
   transition: all 0.2s ease;
+}
+
+.site-footer .footer-socials a:hover,
+.site-footer p a:hover {
+  color: var(--main-blue);
+  transform: scale(1.15);
+}
+
+.bottom-bar {
+  background: var(--main-blue);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 80px;
+}
+
+.bottom-bar p {
+  font-size: 11px;
+  margin: 0;
 }
 
 .footer-socials a:hover,
@@ -809,6 +824,11 @@ footer p {
   </div>
 </footer>
 
+<div class="bottom-bar">
+  <p>© 2024 All Rights Reserved | LORD RAMI RANGER FRSA</p>
+  <p>PRIVACY POLICY & TERMS</p>
+</div>
+  
   <script>
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
