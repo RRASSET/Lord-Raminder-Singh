@@ -41,6 +41,9 @@
 
     :root {
   --main-blue: #6d9ca1;
+  --light-bg: #f9f9f9;
+  --black: #111;
+  --white: #fff;
 }
 
 header {
@@ -202,30 +205,36 @@ body.scrolled .navbar .logo {
     }
 
     .eyebrow {
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 28px;
+  text-transform: uppercase;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  color: var(--main-blue);
+}
 
-    .intro h1 {
-      margin: 0 0 30px;
-      font-size: 28px;
-      line-height: 1.05;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
+.intro h1 {
+  margin: 0 0 16px;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: #111;
+}
 
-    .intro p {
-      max-width: 580px;
-      margin: 0 auto;
-      font-size: 13px;
-      line-height: 1.35;
-      font-weight: 500;
-    }
+.intro p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: #111;
+}
 
     .awards-grid {
-      max-width: 1080px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 20px 20px 105px;
       display: grid;
@@ -255,18 +264,20 @@ body.scrolled .navbar .logo {
     }
 
     .award-card h3 {
-      font-size: 11px;
-      line-height: 1.25;
-      font-weight: 900;
-      margin: 0 0 5px;
-    }
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #111;
+}
 
-    .award-card p {
-      font-size: 10.5px;
-      line-height: 1.35;
-      font-weight: 500;
-      margin: 0;
-    }
+.award-card p {
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0;
+  color: #111;
+}
 
     .quote-section {
       min-height: 360px;
