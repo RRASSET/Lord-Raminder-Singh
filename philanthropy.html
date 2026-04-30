@@ -349,186 +349,258 @@ body.scrolled .navbar .logo {
     }
 
     @media screen and (max-width: 1100px) {
-      .top-bar,
-      .navbar {
-        padding-left: 45px;
-        padding-right: 45px;
-      }
+  .top-bar {
+    padding: 0 40px;
+  }
 
-      .menu {
-        gap: 24px;
-      }
+  .navbar {
+    padding: 0 40px;
+  }
 
-      .bridge-section {
-        gap: 45px;
-      }
+  .brand {
+    align-items: center;
+  }
 
-      .gallery-section {
-        padding: 45px;
-        gap: 40px 25px;
-      }
-    }
+  .brand .logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    @media screen and (max-width: 1024px) {
+  .menu {
+    gap: 24px;
+  }
 
+  .bridge-section {
+    gap: 45px;
+  }
 
-      .page-back {
-        padding: 12px 25px;
-      }
-
-      .bridge-section {
-        grid-template-columns: 1fr;
-        padding: 45px 25px;
-        gap: 35px;
-      }
-
-      .bridge-section img {
-        height: auto;
-      }
-
-      .blue-intro {
-        padding: 45px 25px;
-      }
-
-      .blue-intro h2 {
-        font-size: 25px;
-      }
-
-      .blue-intro p {
-        font-size: 15px;
-      }
-
-      .gallery-section {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 45px 25px;
-        gap: 35px 22px;
-      }
-
-      .gallery-card img {
-        height: 310px;
-      }
-
-      .philanthropy-quote {
-        padding: 60px 25px;
-      }
-
-      .philanthropy-quote p {
-        font-size: 21px;
-      }
-
-      .bottom-bar {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-        padding: 14px 20px;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .navbar {
-        height: 100px;
-        padding: 0 24px;
-      }
-
-      .logo {
-        width: 58px;
-      }
-
-      .brand span {
-        font-size: 10px;
-      }
-
-      .menu-toggle {
-        right: 24px;
-        top: 36px;
-      }
-
-      .menu {
-        top: 100px;
-      }
-
-      .bridge-section {
-        padding: 42px 20px;
-        gap: 28px;
-      }
-
-      .bridge-copy h2 {
-        font-size: 24px;
-        line-height: 1.1;
-      }
-
-      .bridge-copy h4 {
-        font-size: 12px;
-      }
-
-      .bridge-copy p {
-        font-size: 13px;
-      }
-
-      .blue-intro h2 {
-        font-size: 22px;
-      }
-
-      .blue-intro p {
-        font-size: 14px;
-      }
-
-      .gallery-section {
-        grid-template-columns: 1fr;
-        padding: 40px 20px;
-        gap: 32px;
-      }
-
-      .gallery-card img {
-        height: auto;
-      }
-
-      .gallery-card p {
-        font-size: 12.5px;
-      }
-
-      .philanthropy-quote {
-        padding: 50px 20px;
-      }
-
-      .philanthropy-quote p {
-        font-size: 18px;
-      }
-
-      .philanthropy-quote h3 {
-        font-size: 13px;
-      }
-
-      .site-footer {
-  padding: 50px 20px;
+  .gallery-section {
+    padding: 45px;
+    gap: 40px 25px;
+  }
 }
-    }
 
-    @media screen and (max-width: 420px) {
-      .bridge-section,
-      .gallery-section {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
+@media screen and (max-width: 1024px) {
+  .page-back {
+    padding: 12px 25px;
+  }
 
-      .blue-intro {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
+  .bridge-section {
+    grid-template-columns: 1fr;
+    padding: 45px 25px;
+    gap: 35px;
+  }
 
-      .bridge-copy h2,
-      .blue-intro h2 {
-        font-size: 21px;
-      }
+  .bridge-section img {
+    height: auto;
+  }
 
-      .philanthropy-quote p {
-        font-size: 16px;
-      }
+  .blue-intro {
+    padding: 45px 25px;
+  }
 
-      .bottom-bar {
-        font-size: 9px;
-      }
-    }
+  .blue-intro h2 {
+    font-size: 25px;
+  }
+
+  .blue-intro p {
+    font-size: 15px;
+  }
+
+  .gallery-section {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 45px 25px;
+    gap: 35px 22px;
+  }
+
+  .gallery-card img {
+    height: 310px;
+  }
+
+  .philanthropy-quote {
+    padding: 60px 25px;
+  }
+
+  .philanthropy-quote p {
+    font-size: 21px;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    height: 100px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    width: 58px;
+  }
+
+  .brand span {
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    right: 24px;
+    top: 36px;
+  }
+
+  .menu {
+    top: 100px;
+  }
+
+  .bridge-section {
+    padding: 42px 20px;
+    gap: 28px;
+  }
+
+  .bridge-copy h2 {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+  .bridge-copy h4 {
+    font-size: 12px;
+  }
+
+  .bridge-copy p {
+    font-size: 13px;
+  }
+
+  .blue-intro h2 {
+    font-size: 22px;
+  }
+
+  .blue-intro p {
+    font-size: 14px;
+  }
+
+  .gallery-section {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .gallery-card img {
+    height: auto;
+  }
+
+  .gallery-card p {
+    font-size: 12.5px;
+  }
+
+  .philanthropy-quote {
+    padding: 50px 20px;
+  }
+
+  .philanthropy-quote p {
+    font-size: 18px;
+  }
+
+  .philanthropy-quote h3 {
+    font-size: 13px;
+  }
+
+  .site-footer {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .top-bar {
+    height: 36px;
+    padding: 0 22px;
+    justify-content: center;
+  }
+
+  .socials a {
+    margin: 0 12px;
+  }
+
+  .navbar {
+    height: 92px;
+    padding: 0 20px;
+  }
+
+  .brand {
+    width: auto;
+    height: auto;
+  }
+
+  .logo {
+    width: 58px;
+  }
+
+  .brand span {
+    font-size: 11px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 92px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 22px 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  body.scrolled .navbar .menu {
+    background: var(--main-blue);
+  }
+
+  body.scrolled .navbar .menu-toggle {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .bridge-section,
+  .gallery-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .blue-intro {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .bridge-copy h2,
+  .blue-intro h2 {
+    font-size: 21px;
+  }
+
+  .philanthropy-quote p {
+    font-size: 16px;
+  }
+
+  .bottom-bar {
+    font-size: 9px;
+  }
+}
+   
   </style>
 </head>
 
